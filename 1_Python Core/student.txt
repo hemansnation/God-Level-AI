@@ -1,0 +1,4 @@
+this is the best file handling session.
+we are the best.
+This is india.
+string from append modestring from append mode
