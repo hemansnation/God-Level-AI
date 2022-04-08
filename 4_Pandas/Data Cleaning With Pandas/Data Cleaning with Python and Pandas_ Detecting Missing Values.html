@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://www.dataoptimal.com/data-cleaning-with-python-2018/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+			
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://www.dataoptimal.com/xmlrpc.php">
+
+		<!--[if lt IE 9]>
+	<script src="https://www.dataoptimal.com/wp-content/themes/Divi/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<script type="text/javascript" async="" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/linkid.js.download"></script><script async="" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/analytics.js.download"></script><script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<script>var et_site_url='https://www.dataoptimal.com';var et_post_id='1476';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+</script><title>Data Cleaning with Python and Pandas: Detecting Missing Values</title>
+<!-- Speed of this site is optimised by WP Performance Score Booster plugin v1.9.2.1 - https://dipakgajjar.com/wp-performance-score-booster/ -->
+
+<!-- This site is optimized with the Yoast SEO plugin v10.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Data cleaning can be a tedious task. In this post we&#39;ll walk through a number of different data cleaning tasks using Python&#39;s Pandas library.">
+<link rel="canonical" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Cleaning with Python and Pandas: Detecting Missing Values">
+<meta property="og:description" content="Data cleaning can be a tedious task. In this post we&#39;ll walk through a number of different data cleaning tasks using Python&#39;s Pandas library.">
+<meta property="og:url" content="https://www.dataoptimal.com/data-cleaning-with-python-2018/">
+<meta property="og:site_name" content="DataOptimal">
+<meta property="article:section" content="Uncategorized">
+<meta property="article:published_time" content="2018-05-23T19:18:10+00:00">
+<meta property="article:modified_time" content="2018-11-08T21:00:36+00:00">
+<meta property="og:updated_time" content="2018-11-08T21:00:36+00:00">
+<meta property="og:image" content="https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python.jpg">
+<meta property="og:image:secure_url" content="https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python.jpg">
+<meta property="og:image:width" content="1187">
+<meta property="og:image:height" content="682">
+<meta property="og:image:alt" content="data cleaning with python">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Data cleaning can be a tedious task. In this post we&#39;ll walk through a number of different data cleaning tasks using Python&#39;s Pandas library.">
+<meta name="twitter:title" content="Data Cleaning with Python and Pandas: Detecting Missing Values">
+<meta name="twitter:image" content="https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python.jpg">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="DataOptimal » Feed" href="https://www.dataoptimal.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="DataOptimal » Comments Feed" href="https://www.dataoptimal.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="DataOptimal » Data Cleaning with Python and Pandas: Detecting Missing Values Comments Feed" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/feed/">
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.4.2 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.4.2';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-108683214-2';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-108683214-2', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('require', 'linkid', 'linkid.js');
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.dataoptimal.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<meta content="Divi Child theme of Divi v.3.0.106" name="generator"><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="et_monarch-css-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="et-gf-open-sans-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="orbisius_ct_divi_child_theme_parent_style-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="orbisius_ct_divi_child_theme_parent_style_child_style-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="divi-fonts-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="divi-style-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/css(2)" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="prism-theme-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/prism-css.min.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"[]","home_url":"https:\/\/www.dataoptimal.com","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/frontend.min.js.download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/jquery-migrate.min.js.download"></script>
+<link rel="https://api.w.org/" href="https://www.dataoptimal.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.dataoptimal.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.dataoptimal.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="shortlink" href="https://www.dataoptimal.com/?p=1476">
+<link rel="alternate" type="application/json+oembed" href="https://www.dataoptimal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.dataoptimal.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F&amp;format=xml">
+<style type="text/css" id="et-bloom-custom-css">
+					.et_bloom .et_bloom_optin_4 .et_bloom_form_content { background-color: #ededed !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_container .et_bloom_form_header { background-color: #ffffff !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_content button { background-color: #dd3333 !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_content .et_bloom_fields i { color: #dd3333 !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_content .et_bloom_custom_field_radio i:before { background: #dd3333 !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_content button { background-color: #dd3333 !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_container h2, .et_bloom .et_bloom_optin_4 .et_bloom_form_container h2 span, .et_bloom .et_bloom_optin_4 .et_bloom_form_container h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.et_bloom .et_bloom_optin_4 .et_bloom_form_container p, .et_bloom .et_bloom_optin_4 .et_bloom_form_container p span, .et_bloom .et_bloom_optin_4 .et_bloom_form_container p strong, .et_bloom .et_bloom_optin_4 .et_bloom_form_container form input, .et_bloom .et_bloom_optin_4 .et_bloom_form_container form button span { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; } .et_bloom .et_bloom_optin_6 .et_bloom_form_content { background-color: #ededed !important; } .et_bloom .et_bloom_optin_6 .et_bloom_form_container .et_bloom_form_header { background-color: #ffffff !important; } .et_bloom .et_bloom_optin_6 .et_bloom_form_content button { background-color: #dd3333 !important; } .et_bloom .et_bloom_optin_6 .et_bloom_form_content .et_bloom_fields i { color: #dd3333 !important; } .et_bloom .et_bloom_optin_6 .et_bloom_form_content .et_bloom_custom_field_radio i:before { background: #dd3333 !important; } .et_bloom .et_bloom_optin_6 .et_bloom_form_content button { background-color: #dd3333 !important; } .et_bloom .et_bloom_optin_6 .et_bloom_form_container h2, .et_bloom .et_bloom_optin_6 .et_bloom_form_container h2 span, .et_bloom .et_bloom_optin_6 .et_bloom_form_container h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.et_bloom .et_bloom_optin_6 .et_bloom_form_container p, .et_bloom .et_bloom_optin_6 .et_bloom_form_container p span, .et_bloom .et_bloom_optin_6 .et_bloom_form_container p strong, .et_bloom .et_bloom_optin_6 .et_bloom_form_container form input, .et_bloom .et_bloom_optin_6 .et_bloom_form_container form button span { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; } .et_bloom .et_bloom_optin_8 .et_bloom_form_content { background-color: #ededed !important; } .et_bloom .et_bloom_optin_8 .et_bloom_form_container .et_bloom_form_header { background-color: #ffffff !important; } .et_bloom .et_bloom_optin_8 .et_bloom_form_content button { background-color: #81d742 !important; } .et_bloom .et_bloom_optin_8 .et_bloom_form_content .et_bloom_fields i { color: #81d742 !important; } .et_bloom .et_bloom_optin_8 .et_bloom_form_content .et_bloom_custom_field_radio i:before { background: #81d742 !important; } .et_bloom .et_bloom_optin_8 .et_bloom_form_content button { background-color: #81d742 !important; } .et_bloom .et_bloom_optin_8 .et_bloom_form_container h2, .et_bloom .et_bloom_optin_8 .et_bloom_form_container h2 span, .et_bloom .et_bloom_optin_8 .et_bloom_form_container h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.et_bloom .et_bloom_optin_8 .et_bloom_form_container p, .et_bloom .et_bloom_optin_8 .et_bloom_form_container p span, .et_bloom .et_bloom_optin_8 .et_bloom_form_container p strong, .et_bloom .et_bloom_optin_8 .et_bloom_form_container form input, .et_bloom .et_bloom_optin_8 .et_bloom_form_container form button span { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; } 
+				</style><style type="text/css" id="et-social-custom-css">
+				 
+			</style><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><link rel="shortcut icon" href="https://www.dataoptimal.com/wp-content/uploads/logo_icon.jpg"><link href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/prism.css" rel="stylesheet"><link rel="stylesheet" id="et-core-unified-cached-inline-styles" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/et-core-unified-15528570293702.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)"><style>[data-columns]::before{visibility:hidden;position:absolute;font-size:1px;}</style><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+<body class="post-template-default single single-post postid-1476 single-format-standard et_bloom et_monarch et_pb_button_helper_class et_non_fixed_nav et_show_nav et_cover_background et_pb_gutter windows et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns4 et_header_style_left et_pb_pagebuilder_layout et_full_width_page et_divi_theme et-db et_minified_js et_minified_css chrome et_bloom_popup_active">
+	<div id="page-container">
+
+	
+	
+		<header id="main-header" data-height-onload="58" data-height-loaded="true" data-fixed-height-onload="58">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://www.dataoptimal.com/">
+						<img src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/dataoptimal-logo.jpg" alt="DataOptimal" id="logo" data-height-percentage="54" data-actual-width="502" data-actual-height="108">
+					</a>
+				</div>
+				<div id="et-top-navigation" data-height="43" data-fixed-height="40" style="padding-left: 175px;">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="https://www.dataoptimal.com/about/">About</a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="https://www.dataoptimal.com/blog/">Blog</a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://www.dataoptimal.com/contact/">Contact</a></li>
+</ul>						</nav>
+					
+					
+					
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				<ul id="mobile_menu" class="et_mobile_menu"><li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29 et_first_mobile_item"><a href="https://www.dataoptimal.com/about/">About</a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="https://www.dataoptimal.com/blog/">Blog</a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://www.dataoptimal.com/contact/">Contact</a></li>
+</ul></div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+			<div class="et_search_outer">
+				<div class="container et_search_form_container">
+					<form role="search" method="get" class="et-search-form" action="https://www.dataoptimal.com/">
+					<input type="search" class="et-search-field" placeholder="Search …" value="" name="s" title="Search for:">					</form>
+					<span class="et_close_search_field"></span>
+				</div>
+			</div>
+		</header> <!-- #main-header -->
+
+		<div id="et-main-area">
+
+<div id="main-content">
+		<div class="container">
+		<div id="content-area" class="clearfix">
+			<div id="left-area">
+											<article id="post-1476" class="et_pb_post post-1476 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized et_pb_no_comments_section">
+					
+					<div class="entry-content">
+					<div id="et-boc" class="et-boc">
+			
+			<div class="et_builder_inner_content et_pb_gutters3">
+				<div class="et_pb_section et_pb_section_0 et_section_regular">
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_0">
+				<div class="et_pb_column et_pb_column_2_3 et_pb_column_0    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_post_title et_pb_post_title_0 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				
+				<div class="et_pb_title_container">
+					<h1 class="entry-title">Data Cleaning with Python and Pandas: Detecting Missing Values</h1>
+				</div>
+				<div class="et_pb_title_featured_container"><img width="1024" height="588" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/data-cleaning-with-python-1024x588.jpg" class="attachment-large size-large wp-post-image" alt="data cleaning with python" srcset="https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-1024x588.jpg 1024w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-300x172.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-768x441.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-610x350.jpg 610w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-1080x621.jpg 1080w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python.jpg 1187w" sizes="(max-width: 1024px) 100vw, 1024px"></div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_0 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<b>Data cleaning can be a tedious task.</b><p></p>
+<p>It’s the start of a new project and you’re excited to apply some machine learning models.</p>
+<p>You take a look at the <strong>data</strong> and quickly realize it’s an <strong>absolute mess</strong>.</p>
+<p>According to <a title="data cleaning" href="https://www.ibm.com/blogs/bluemix/2017/08/ibm-data-catalog-data-scientists-productivity/" target="_blank" rel="noopener noreferrer">IBM Data Analytics</a> you can expect to spend up to <strong>80% of your time cleaning data</strong>.</p>
+<p><img class="wp-image-1492 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/data-cleaning-from-ibm-analytics.jpg" alt="data cleaning from ibm analytics" width="1196" height="343" srcset="https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics.jpg 1196w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-300x86.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-768x220.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-1024x294.jpg 1024w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-610x175.jpg 610w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-1080x310.jpg 1080w" sizes="(max-width: 1196px) 100vw, 1196px"></p>
+<p>In this post we’ll walk through a number of different <strong>data cleaning</strong> tasks using Python’s <a title="Pandas library" href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">Pandas library</a>.&nbsp; Specifically, we’ll focus on probably the biggest data cleaning task,&nbsp;<strong>missing values</strong>.</p>
+<p>After reading this post you’ll be able to <strong>more quickly clean data</strong>.&nbsp; We all want to <strong>spend less time cleaning data</strong>, and more time exploring and modeling.
+				</p></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_ et_pb_module ">
+				<a id="data_cleaning_bonus" class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/">Click here to get the FREE Data Cleaning Cheat Sheet</a>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<h2>Sources of Missing Values</h2>
+<p>Before we dive into code, it’s important to understand the sources of missing data.&nbsp; Here’s some typical reasons why data is missing:</p>
+<ul>
+<li>User forgot to fill in a field.</li>
+<li>Data was lost while transferring manually from a legacy database.</li>
+<li>There was a programming error.</li>
+<li>Users chose not to fill out a field tied to their beliefs about how the results would be used or interpreted.</li>
+</ul>
+<p>As you can see, some of these sources are just simple random mistakes.&nbsp; Other times, there can be a deeper reason why data is missing.</p>
+<p>It’s important to understand these <a title="missing data" href="https://en.wikipedia.org/wiki/Missing_data" target="_blank" rel="noopener noreferrer">different types of missing data</a> from a statistics point of view.&nbsp; The type of missing data will influence how you deal with filling in the missing values.</p>
+<p>Today we’ll learn how to detect missing values, and do some basic imputation.&nbsp; For a detailed statistical approach for <a title="dealing with missing data" href="https://github.com/matthewbrems/ODSC-missing-data-may-18/blob/master/Analysis%20with%20Missing%20Data.pdf" target="_blank" rel="noopener noreferrer">dealing with missing data</a>, check out these awesome slides from data scientist Matt Brems.</p>
+<p>Keep in mind, imputing with a median or mean value is usually a bad idea, so be sure to check out Matt’s slides for the correct approach.</p>
+<h2>Getting Started</h2>
+<p>Before you start cleaning a data set, it’s a good idea to just get a general feel for the data.&nbsp; After that, you can put together a plan to clean the data.</p>
+<p>I like to start by asking the following questions:</p>
+<ul>
+<li>What are the features?</li>
+<li>What are the expected types (int, float, string, boolean)?</li>
+<li>Is there obvious missing data (values that Pandas can detect)?</li>
+<li>Is there other types of missing data that’s not so obvious (can’t easily detect with Pandas)?</li>
+</ul>
+<p>To show you what I mean, let’s start working through the example.</p>
+<p>The data we’re going to work with is a very small <a href="https://github.com/dataoptimal/posts/tree/master/data%20cleaning%20with%20python%20and%20pandas" target="_blank" rel="noopener">real estate dataset</a>.&nbsp; Head on over to our <a href="https://github.com/dataoptimal/posts/tree/master/data%20cleaning%20with%20python%20and%20pandas" target="_blank" rel="noopener">github page</a> to grab a copy of the <a href="https://github.com/dataoptimal/posts/tree/master/data%20cleaning%20with%20python%20and%20pandas" target="_blank" rel="noopener">csv file</a> so that you can code along.</p>
+<p>Here’s a quick look at the data:</p>
+<p><b><img class="wp-image-1504 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/real-estate-data.jpg" alt="real estate data" width="827" height="455" srcset="https://www.dataoptimal.com/wp-content/uploads/real-estate-data.jpg 827w, https://www.dataoptimal.com/wp-content/uploads/real-estate-data-300x165.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/real-estate-data-768x423.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/real-estate-data-610x336.jpg 610w" sizes="(max-width: 827px) 100vw, 827px"></b></p>
+<p>This is a much smaller dataset than what you’ll typically work with.&nbsp; Even though it’s a small dataset, it highlights a lot of real-world situations that you will encounter on projects.</p>
+<p>A good way to get a quick feel for the data is to take a look at the first few rows.&nbsp; Here’s how you would do that in Pandas:</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Importing libraries</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment" spellcheck="true"># Read csv file into a pandas dataframe</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"property data.csv"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Take a look at the first few rows</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+   ST_NUM    ST_NAME OWN_OCCUPIED  NUM_BEDROOMS
+<span class="token number">0</span>   <span class="token number">104.0</span>     PUTNAM            Y           <span class="token number">3.0</span>
+<span class="token number">1</span>   <span class="token number">197.0</span>  LEXINGTON            N           <span class="token number">3.0</span>
+<span class="token number">2</span>     NaN  LEXINGTON            N           <span class="token number">3.0</span>
+<span class="token number">3</span>   <span class="token number">201.0</span>   BERKELEY          NaN           <span class="token number">1.0</span>
+<span class="token number">4</span>   <span class="token number">203.0</span>   BERKELEY            Y           <span class="token number">3.0</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>I know that I said we’ll be working with Pandas, but you can see that I also imported Numpy. We’ll use this a little bit later on to rename some missing values, so we might as well import it now.</p>
+<p>After importing the libraries we read the csv file into a Pandas dataframe. You can think of the dataframe as a spreadsheet.</p>
+<p>With the <code class=" language-python"><span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span></code>method, we can easily see the first few rows.</p>
+<p>Now I can answer my original question, <strong>what are my features?&nbsp; </strong>It’s pretty easy to infer the following features from the column names:</p>
+<ul>
+<li><code class=" language-python">ST_NUM</code>: Street number</li>
+<li><code class=" language-python">ST_NAME</code>: Street name</li>
+<li><code class=" language-python">OWN_OCCUPIED</code>: Is the residence owner occupied</li>
+<li><code class=" language-python">NUM_BEDROOMS</code>: Number of bedrooms</li>
+</ul>
+<p>We can also answer, <strong>what are the expected types?</strong></p>
+<ul>
+<li><code class=" language-python">ST_NUM</code>: float or int… some sort of numeric type</li>
+<li><code class=" language-python">ST_NAME</code>: string</li>
+<li><code class=" language-python">OWN_OCCUPIED</code>: string… Y (“Yes”) or N (“No”)</li>
+<li><code class=" language-python">NUM_BEDROOMS</code>: float or int, a numeric type</li>
+</ul>
+<p>To answer the next two questions, we’ll need to start getting more in-depth width Pandas. Let’s start looking at examples of how to detect missing values</p>
+<h2>Standard Missing Values</h2>
+<p>So what do I mean by “standard missing values”? These are missing values that Pandas can detect.</p>
+<p>Going back to our original data set, let’s take a look at the “Street Number” column.</p>
+<p><img class="wp-image-1575 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/standard-missing-values.jpg" alt="standard missing values" width="830" height="458" srcset="https://www.dataoptimal.com/wp-content/uploads/standard-missing-values.jpg 830w, https://www.dataoptimal.com/wp-content/uploads/standard-missing-values-300x166.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/standard-missing-values-768x424.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/standard-missing-values-610x337.jpg 610w" sizes="(max-width: 830px) 100vw, 830px"></p>
+<p>In the third column there’s an empty cell. In the seventh row there’s an “NA” value.</p>
+<p>Clearly these are both missing values.&nbsp;Let’s see how Pandas deals with these.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the ST_NUM column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the ST_NUM column</span>
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token number">104.0</span>
+<span class="token number">1</span>    <span class="token number">197.0</span>
+<span class="token number">2</span>      NaN
+<span class="token number">3</span>    <span class="token number">201.0</span>
+<span class="token number">4</span>    <span class="token number">203.0</span>
+<span class="token number">5</span>    <span class="token number">207.0</span>
+<span class="token number">6</span>      NaN
+<span class="token number">7</span>    <span class="token number">213.0</span>
+<span class="token number">8</span>    <span class="token number">215.0</span>
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>     <span class="token boolean">True</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>    <span class="token boolean">False</span>
+<span class="token number">6</span>     <span class="token boolean">True</span>
+<span class="token number">7</span>    <span class="token boolean">False</span>
+<span class="token number">8</span>    <span class="token boolean">False</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Taking a look at the column, we can see that Pandas filled in the blank space with “NA”. Using the <code class=" language-python">isnull<span class="token punctuation">(</span><span class="token punctuation">)</span></code> method, we can confirm that both the missing value and “NA” were recognized as missing values. Both boolean responses are <code class=" language-python"><span class="token boolean">True</span></code>.</p>
+<p>This is a simple example, but highlights an important point. Pandas will recognize both empty cells and “NA” types as missing values.&nbsp;In the next section, we’ll take a look at some types that Pandas won’t recognize.</p>
+<h2>Non-Standard Missing Values</h2>
+<p>Sometimes it might be the case where there’s missing values that have different formats.</p>
+<p>Let’s take a look at the “Number of Bedrooms” column to see what I mean.</p>
+<p><img class="wp-image-1585 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/non-standard-missing-values.jpg" alt="non-standard missing values" width="830" height="455" srcset="https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values.jpg 830w, https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values-300x164.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values-768x421.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values-610x334.jpg 610w" sizes="(max-width: 830px) 100vw, 830px"></p>
+<p>In this column, there’s four missing values.</p>
+<ul>
+<li>n/a</li>
+<li>NA</li>
+<li>—</li>
+<li>na</li>
+</ul>
+<p>From the previous section, we know that Pandas will recognize “NA” as a missing value, but what about the others? Let’s take a look.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the NUM_BEDROOMS column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>      <span class="token number">3</span>
+<span class="token number">1</span>      <span class="token number">3</span>
+<span class="token number">2</span>    n<span class="token operator">/</span>a
+<span class="token number">3</span>      <span class="token number">1</span>
+<span class="token number">4</span>      <span class="token number">3</span>
+<span class="token number">5</span>    NaN
+<span class="token number">6</span>      <span class="token number">2</span>
+<span class="token number">7</span>     <span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">8</span>     na
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>    <span class="token boolean">False</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>     <span class="token boolean">True</span>
+<span class="token number">6</span>    <span class="token boolean">False</span>
+<span class="token number">7</span>    <span class="token boolean">False</span>
+<span class="token number">8</span>    <span class="token boolean">False</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Just like before, Pandas recognized the “NA” as a missing value. Unfortunately, the other types weren’t recognized.</p>
+<p>If there’s multiple users manually entering data, then this is a common problem. Maybe i like to use “n/a” but you like to use “na”.</p>
+<p>An easy way to detect these various formats is to put them in a list. Then when we import the data, Pandas will recognize them right away. Here’s an example of how we would do that.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Making a list of missing value types</span>
+missing_values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"n/a"</span><span class="token punctuation">,</span> <span class="token string">"na"</span><span class="token punctuation">,</span> <span class="token string">"--"</span><span class="token punctuation">]</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"property data.csv"</span><span class="token punctuation">,</span> na_values <span class="token operator">=</span> missing_values<span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Now let’s take another look at this column and see what happens.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the NUM_BEDROOMS column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token number">3.0</span>
+<span class="token number">1</span>    <span class="token number">3.0</span>
+<span class="token number">2</span>    NaN
+<span class="token number">3</span>    <span class="token number">1.0</span>
+<span class="token number">4</span>    <span class="token number">3.0</span>
+<span class="token number">5</span>    NaN
+<span class="token number">6</span>    <span class="token number">2.0</span>
+<span class="token number">7</span>    NaN
+<span class="token number">8</span>    NaN
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>     <span class="token boolean">True</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>     <span class="token boolean">True</span>
+<span class="token number">6</span>    <span class="token boolean">False</span>
+<span class="token number">7</span>     <span class="token boolean">True</span>
+<span class="token number">8</span>     <span class="token boolean">True</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>This time, all of the different formats were recognized as missing values.</p>
+<p>You might not be able to catch all of these right away. As you work through the data and see other types of missing values, you can add them to the list.</p>
+<p>It’s important to recognize these non-standard types of missing values for purposes of summarizing and transforming missing values. If you try and count the number of missing values before converting these non-standard types, you could end up missing a lot of missing values.</p>
+<p>In the next section we’ll take a look at a more complicated, but very common, type of missing value.</p>
+<h2>Unexpected Missing Values</h2>
+<p>So far we’ve seen standard missing values, and non-standard missing values. What if we an unexpected type?</p>
+<p>For example, if our feature is expected to be a string, but there’s a numeric type, then technically this is also a missing value.</p>
+<p>Let’s take a look at the “Owner Occupied” column to see what I’m talking about.</p>
+<p><img class="wp-image-1588 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/unexpected-missing-values.jpg" alt="unexpected missing values" width="829" height="457" srcset="https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values.jpg 829w, https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values-300x165.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values-768x423.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values-610x336.jpg 610w" sizes="(max-width: 829px) 100vw, 829px"></p>
+<p>From our previous examples, we know that Pandas will detect the empty cell in row seven as a missing value. Let’s confirm with some code.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the OWN_OCCUPIED column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the ST_NUM column</span>
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>      Y
+<span class="token number">1</span>      N
+<span class="token number">2</span>      N
+<span class="token number">3</span>     <span class="token number">12</span>
+<span class="token number">4</span>      Y
+<span class="token number">5</span>      Y
+<span class="token number">6</span>    NaN
+<span class="token number">7</span>      Y
+<span class="token number">8</span>      Y
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>    <span class="token boolean">False</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>    <span class="token boolean">False</span>
+<span class="token number">6</span>     <span class="token boolean">True</span>
+<span class="token number">7</span>    <span class="token boolean">False</span>
+<span class="token number">8</span>    <span class="token boolean">False</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>In the fourth row, there’s the number 12. The response for Owner Occupied should clearly be a string (Y or N), so this numeric type should be a missing value.</p>
+<p>This example is a little more complicated so we’ll need to think through a strategy for detecting these types of missing values. There’s a number of different approaches, but here’s the way that I’m going to work thorugh this one.</p>
+<ol>
+<li>Loop through the OWN_OCCUPIED column</li>
+<li>Try and turn the entry&nbsp;into an integer</li>
+<li>If the entry can be changed into an integer, enter a missing value</li>
+<li>If the number can’t be an integer, we know it’s a string, so keep going</li>
+</ol>
+<p>Let’s take a look at the code and then we’ll go through it in detail.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Detecting numbers </span>
+cnt<span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> df<span class="token punctuation">[</span><span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        int<span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+        df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>cnt<span class="token punctuation">,</span> <span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span><span class="token operator">=</span>np<span class="token punctuation">.</span>nan
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+    cnt<span class="token operator">+=</span><span class="token number">1</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>In the code we’re looping through each entry in the “Owner Occupied” column. To try and change the entry to an integer, we’re using <code class=" language-python">int<span class="token punctuation">(</span>row<span class="token punctuation">)</span></code>.</p>
+<p>If the value can be changed to an integer, we change the entry to a missing value using Numpy’s <code class=" language-python">np<span class="token punctuation">.</span>nan</code>.</p>
+<p>On the other hand, if it can’t be changed to an integer, we <code class=" language-python"><span class="token keyword">pass</span></code> and keep going.</p>
+<p>You’ll notice that I used <code class=" language-python"><span class="token keyword">try</span></code> and <code class=" language-python"><span class="token keyword">except</span> ValueError</code>. This is called <a href="https://docs.python.org/2/tutorial/errors.html" target="_blank" rel="noopener">exception handling</a>, and we use this to handle errors.</p>
+<p>If we were to try and change an entry into an integer and it couldn’t be changed, then a <code class=" language-python">ValueError</code> would be returned, and the code would stop. To deal with this, we use exception handling to recognize these errors, and keep going.</p>
+<p>Another important bit of the code is the <code class=" language-python"><span class="token punctuation">.</span>loc</code> method. This is the preferred Pandas method for modfiying entries in place. For more info on this you can check out the <a href="http://pandas.pydata.org/pandas-docs/version/0.21/generated/pandas.DataFrame.loc.html" target="_blank" rel="noopener">Pandas documentation</a>.</p>
+<p>Now that we’ve worked through the different ways of detecting missing values, we’ll take a look at summarizing, and replacing them.</p>
+<h2>Summarizing Missing Values</h2>
+<p>After we’ve cleaned the missing values, we will probably want to summarize them. For instance, we might want to look at the total number of missing values for each feature.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Total missing values for each feature</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+ST_NUM          <span class="token number">2</span>
+ST_NAME         <span class="token number">0</span>
+OWN_OCCUPIED    <span class="token number">2</span>
+NUM_BEDROOMS    <span class="token number">4</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Other times we might want to do a quick check to see if we have any missing values at all.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Any missing values?</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values<span class="token punctuation">.</span>any<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+<span class="token boolean">True</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>We might also want to get a total count of missing values.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Total number of missing values</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+<span class="token number">8</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Now that we’ve summarized the number of missing values, let’s take a look at doing some simple replacements.</p>
+<h2>Replacing</h2>
+<p>Often times you’ll have to figure out how you want to handle missing values.</p>
+<p>Sometimes you’ll simply want to delete those rows, other times you’ll replace them.</p>
+<p>As I mentioned earlier, this shouldn’t be taken lightly. We’ll go over some basic imputations, but for a detailed statistical approach for <a title="dealing with missing data" href="https://github.com/matthewbrems/ODSC-missing-data-may-18/blob/master/Analysis%20with%20Missing%20Data.pdf" target="_blank" rel="noopener noreferrer">dealing with missing data</a>, check out these awesome slides from data scientist Matt Brems.</p>
+<p>That being said, maybe you just want to fill in missing values with a single value.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Replace missing values with a number</span>
+df<span class="token punctuation">[</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">125</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>More likely, you might want to do a location based imputation. Here’s how you would do that.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Location based replacement</span>
+df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">125</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>A very common way to replace missing values is using a median.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Replace using median </span>
+median <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>median<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>median<span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>We’ve gone over a few simple ways to replace missing values, but be sure to check out Matt’s slides for the proper techniques.</p>
+<h2>Conclusion</h2>
+<p>Dealing with messy data is inevitable. Data cleaning is just part of the process on a data science project.</p>
+<p>In this article we went over some ways to detect, summarize, and replace missing values.</p>
+<p>For even more resources about data cleaning, check out these <a href="https://www.dataoptimal.com/data-science-books-2018/" target="_blank" rel="noopener">data science books</a>.</p>
+<p>Armed with these techniques, you’ll spend less time data cleaning, and more time exploring and modeling.</p>
+<p><strong>Leave a comment below and let me know which technique you find most useful!</strong>
+				</p></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_button_module_wrapper et_pb_button_1_wrapper et_pb_button_alignment_ et_pb_module ">
+				<a id="data_cleaning_bonus" class="et_pb_button et_pb_button_1 et_pb_bg_layout_light" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/">Click here to get the FREE Data Cleaning Cheat Sheet</a>
+			</div><div class="et_pb_module et_pb_comments_0 et_pb_comments_module et_pb_bg_layout_light et_pb_no_comments_count">
+				
+				
+				<!-- You can start editing here. -->
+
+<section id="comment-wrap">
+	<h1 id="comments" class="page_title">13 Comments</h1>
+			
+					<ol class="commentlist clearfix">
+					<li class="comment even thread-even depth-1" id="li-comment-16">
+		<article id="comment-16" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Satish" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/b40769083d3425e5078c130d2b325bc9.png" srcset="https://secure.gravatar.com/avatar/b40769083d3425e5078c130d2b325bc9?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Satish</span>				<span class="comment_date">
+				on July 12, 2018 at 11:19 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks for the great tutorial.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-16" data-commentid="16" data-postid="1476" data-belowelement="comment-16" data-respondelement="respond" aria-label="Reply to Satish">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-17">
+		<article id="comment-17" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on July 12, 2018 at 1:40 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks Satish, glad you enjoyed it!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-17" data-commentid="17" data-postid="1476" data-belowelement="comment-17" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-18">
+		<article id="comment-18" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Shoeb Mohammad" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/1dd988f3450e97d38b7ee4ce59b13a7b.png" srcset="https://secure.gravatar.com/avatar/1dd988f3450e97d38b7ee4ce59b13a7b?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Shoeb Mohammad</span>				<span class="comment_date">
+				on July 12, 2018 at 6:01 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Literally It is the best easy tutorial to make beginners understand each and every word of the code. Thank you DataOptimal for this wonderful tutorial and it actually helped.</p>
+<p>Thanks again. Keep up the great work.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-18" data-commentid="18" data-postid="1476" data-belowelement="comment-18" data-respondelement="respond" aria-label="Reply to Shoeb Mohammad">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-19">
+		<article id="comment-19" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on July 12, 2018 at 6:43 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thank you for the kind words Shoeb, I’m glad it helped!</p>
+<p>We’ll be publishing plenty more posts, so be sure to check back often!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-19" data-commentid="19" data-postid="1476" data-belowelement="comment-19" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-85">
+		<article id="comment-85" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Ravi" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/d97d7498df8b21e9c62d4df17a6a8e35.png" srcset="https://secure.gravatar.com/avatar/d97d7498df8b21e9c62d4df17a6a8e35?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Ravi</span>				<span class="comment_date">
+				on August 9, 2018 at 4:49 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Wonderful and effective explanation with an example, Great work guys @DataOptimal.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-85" data-commentid="85" data-postid="1476" data-belowelement="comment-85" data-respondelement="respond" aria-label="Reply to Ravi">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-100">
+		<article id="comment-100" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on August 28, 2018 at 2:11 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks, glad you enjoyed it!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-100" data-commentid="100" data-postid="1476" data-belowelement="comment-100" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-96">
+		<article id="comment-96" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="sasha" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/1944f6f01966afc2a4220ff38af03551.png" srcset="https://secure.gravatar.com/avatar/1944f6f01966afc2a4220ff38af03551?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">sasha</span>				<span class="comment_date">
+				on August 28, 2018 at 4:24 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>This was hands on the best explanation for using pandas, it was well documented and helped me a lot in my preparation. Thanks a lot. you should do more tutorials, call it data science made simple or something <img draggable="false" class="emoji" alt="😉" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/1f609.svg"></p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-96" data-commentid="96" data-postid="1476" data-belowelement="comment-96" data-respondelement="respond" aria-label="Reply to sasha">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-101">
+		<article id="comment-101" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on August 28, 2018 at 2:12 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>I’m glad you enjoyed it Sasha! We’re working on plenty of more tutorials, so stay tuned!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-101" data-commentid="101" data-postid="1476" data-belowelement="comment-101" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-143">
+		<article id="comment-143" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="KARN KUMAR" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/144d9ce1fa244416b1fe639df3479279.png" srcset="https://secure.gravatar.com/avatar/144d9ce1fa244416b1fe639df3479279?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">KARN KUMAR</span>				<span class="comment_date">
+				on September 11, 2018 at 2:52 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>This is awesome tutorial, would be great if you could create more videos or blogs.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-143" data-commentid="143" data-postid="1476" data-belowelement="comment-143" data-respondelement="respond" aria-label="Reply to KARN KUMAR">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-238">
+		<article id="comment-238" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on October 24, 2018 at 6:42 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks Karn! I’ll be posting more soon, so stay tuned!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-238" data-commentid="238" data-postid="1476" data-belowelement="comment-238" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-204">
+		<article id="comment-204" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Junior" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/6da3594192d99292b8af9ec579aa679b.jpeg" srcset="https://secure.gravatar.com/avatar/6da3594192d99292b8af9ec579aa679b?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Junior</span>				<span class="comment_date">
+				on October 11, 2018 at 8:06 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>This is a great resource, exactly what I was looking for! Thank you!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-204" data-commentid="204" data-postid="1476" data-belowelement="comment-204" data-respondelement="respond" aria-label="Reply to Junior">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-239">
+		<article id="comment-239" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on October 24, 2018 at 6:42 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>You’re welcome Junior, glad you enjoyed it!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-239" data-commentid="239" data-postid="1476" data-belowelement="comment-239" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-207">
+		<article id="comment-207" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Jacobs" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/d39a6434355dad80f2866382a86826f9.png" srcset="https://secure.gravatar.com/avatar/d39a6434355dad80f2866382a86826f9?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn"><a href="http://website/" rel="external nofollow" class="url">Jacobs</a></span>				<span class="comment_date">
+				on October 12, 2018 at 7:13 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Do you have a similar example of data cleaning with R</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-207" data-commentid="207" data-postid="1476" data-belowelement="comment-207" data-respondelement="respond" aria-label="Reply to Jacobs">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+			</ol>
+		
+		
+							<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span>Submit a Comment</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.dataoptimal.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment" style="display: none;">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author" style="display: none;">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email" style="display: none;">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url" style="display: none;">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><button name="submit" type="submit" id="et_pb_submit" class="submit et_pb_button">Submit Comment</button> <input type="hidden" name="comment_post_ID" value="1476" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0a6dd0783a"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1553229706592"></form>
+			</div><!-- #respond -->
+		</section>
+
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_1    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_signup_0 et_pb_newsletter_layout_left_right et_pb_newsletter et_pb_subscribe clearfix et_pb_bg_layout_dark  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_newsletter_description">
+					<h2 class="et_pb_module_header">Learn Data Science Fast</h2>
+					<p style="text-align: center;">Learn how to get a data science job with techniques that I used to land a job in under 3 months.</p><br>
+
+				</div>
+				
+				<div class="et_pb_newsletter_form">
+					<form method="post">
+						<div class="et_pb_newsletter_result et_pb_newsletter_error"></div>
+						<div class="et_pb_newsletter_result et_pb_newsletter_success">
+							<h2>Welcome to the DataOptimal community!</h2>
+						</div>
+						<div class="et_pb_newsletter_fields">
+							
+							
+							
+					<p class="et_pb_newsletter_field et_pb_contact_field_last">
+						<label class="et_pb_contact_form_label" for="et_pb_signup_email" style="display: none;">Email</label>
+						<input id="et_pb_signup_email" class="input" type="text" placeholder="Email" name="et_pb_signup_email">
+					</p>
+							
+							
+					<p class="et_pb_newsletter_button_wrap">
+						<a class="et_pb_newsletter_button et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#" data-icon="">
+							<span class="et_subscribe_loader"></span>
+							<span class="et_pb_newsletter_button_text">Sign Up</span>
+						</a>
+					</p>
+							
+						</div>
+						
+						<input type="hidden" value="mailchimp" name="et_pb_signup_provider">
+						<input type="hidden" value="94d8133e1f" name="et_pb_signup_list_id">
+						<input type="hidden" value="DataOptimal" name="et_pb_signup_account_name">
+						<input type="hidden" value="true" name="et_pb_signup_ip_address">
+					</form>
+				</div>
+			</div><div class="et_pb_module et_pb_cta_0 et_pb_promo et_pb_bg_layout_dark  et_pb_text_align_center">
+				
+				
+				<div class="et_pb_promo_description">
+					
+					Get Access to the top Data Science books in 2018.
+				</div>
+				<div class="et_pb_button_wrapper"><a class="et_pb_button et_pb_promo_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#">Get Access Now</a></div>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_1 et_section_regular">
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_1">
+				<div class="et_pb_column et_pb_column_2_3 et_pb_column_2    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_post_title et_pb_post_title_1 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				
+				<div class="et_pb_title_container">
+					<h1 class="entry-title">Data Cleaning with Python and Pandas: Detecting Missing Values</h1>
+				</div>
+				<div class="et_pb_title_featured_container"><img width="1024" height="588" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/data-cleaning-with-python-1024x588.jpg" class="attachment-large size-large wp-post-image" alt="data cleaning with python" srcset="https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-1024x588.jpg 1024w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-300x172.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-768x441.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-610x350.jpg 610w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python-1080x621.jpg 1080w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-with-python.jpg 1187w" sizes="(max-width: 1024px) 100vw, 1024px"></div>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_2_wrapper et_pb_button_alignment_ et_pb_module ">
+				<a id="data_cleaning_bonus" class="et_pb_button et_pb_button_2 et_pb_bg_layout_light" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/">FREE Data Cleaning Cheat Sheet</a>
+			</div><div class="et_pb_module et_pb_text et_pb_text_2 et_pb_bg_layout_light  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_text_inner">
+					<p><b>Data cleaning can be a tedious task.</b></p>
+<p>It’s the start of a new project and you’re excited to apply some machine learning models.</p>
+<p>You take a look at the <strong>data</strong> and quickly realize it’s an <strong>absolute mess</strong>.</p>
+<p>According to <a title="data cleaning" href="https://www.ibm.com/blogs/bluemix/2017/08/ibm-data-catalog-data-scientists-productivity/" target="_blank" rel="noopener noreferrer">IBM Data Analytics</a> you can expect to spend up to <strong>80% of your time cleaning data</strong>.</p>
+<p><img class="wp-image-1492 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/data-cleaning-from-ibm-analytics.jpg" alt="data cleaning from ibm analytics" width="1196" height="343" srcset="https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics.jpg 1196w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-300x86.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-768x220.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-1024x294.jpg 1024w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-610x175.jpg 610w, https://www.dataoptimal.com/wp-content/uploads/data-cleaning-from-ibm-analytics-1080x310.jpg 1080w" sizes="(max-width: 1196px) 100vw, 1196px"></p>
+<p>In this post we’ll walk through a number of different <strong>data cleaning</strong> tasks using Python’s <a title="Pandas library" href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">Pandas library</a>.&nbsp; Specifically, we’ll focus on probably the biggest data cleaning task,&nbsp;<strong>missing values</strong>.</p>
+<p>After reading this post you’ll be able to <strong>more quickly clean data</strong>.&nbsp; We all want to <strong>spend less time cleaning data</strong>, and more time exploring and modeling.</p>
+<p>Before we jump into the code, let’s first understand what are some sources of missing values in messy datasets.</p>
+<h2>Sources of Missing Values</h2>
+<p>Before we dive into code, it’s important to understand the sources of missing data.&nbsp; Here’s some typical reasons why data is missing:</p>
+<ul>
+<li>User forgot to fill in a field.</li>
+<li>Data was lost while transferring manually from a legacy database.</li>
+<li>There was a programming error.</li>
+<li>Users chose not to fill out a field tied to their beliefs about how the results would be used or interpreted.</li>
+</ul>
+<p>As you can see, some of these sources are just simple random mistakes.&nbsp; Other times, there can be a deeper reason why data is missing.</p>
+<p>It’s important to understand these <a title="missing data" href="https://en.wikipedia.org/wiki/Missing_data" target="_blank" rel="noopener noreferrer">different types of missing data</a> from a statistics point of view.&nbsp; The type of missing data will influence how you deal with filling in the missing values.</p>
+<p>Today we’ll learn how to detect missing values, and do some basic imputation.&nbsp; For a detailed statistical approach for <a title="dealing with missing data" href="https://github.com/matthewbrems/ODSC-missing-data-may-18/blob/master/Analysis%20with%20Missing%20Data.pdf" target="_blank" rel="noopener noreferrer">dealing with missing data</a>, check out these awesome slides from data scientist Matt Brems.</p>
+<p>Keep in mind, imputing with a median or mean value is usually a bad idea, so be sure to check out Matt’s slides for the correct approach.</p>
+<h2>Getting Started</h2>
+<p>Before you start cleaning a data set, it’s a good idea to just get a general feel for the data.&nbsp; After that, you can put together a plan to clean the data.</p>
+<p>I like to start by asking the following questions:</p>
+<ul>
+<li>What are the features?</li>
+<li>What are the expected types (int, float, string, boolean)?</li>
+<li>Is there obvious missing data (values that Pandas can detect)?</li>
+<li>Is there other types of missing data that’s not so obvious (can’t easily detect with Pandas)?</li>
+</ul>
+<p>To show you what I mean, let’s start working through the example.</p>
+<p>The data we’re going to work with is a very small real estate dataset.&nbsp; Head on over to our github page to grab a copy of the csv file so that you can code along.</p>
+<p>Here’s a quick look at the data:</p>
+<p><b><img class="wp-image-1504 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/real-estate-data.jpg" alt="real estate data" width="827" height="455" srcset="https://www.dataoptimal.com/wp-content/uploads/real-estate-data.jpg 827w, https://www.dataoptimal.com/wp-content/uploads/real-estate-data-300x165.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/real-estate-data-768x423.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/real-estate-data-610x336.jpg 610w" sizes="(max-width: 827px) 100vw, 827px"></b></p>
+<p>This is a much smaller dataset than what you’ll typically work with.&nbsp; Even though it’s a small dataset, it highlights a lot of real-world situations that you will encounter on projects.</p>
+<p>A good way to get a quick feel for the data is to take a look at the first few rows.&nbsp; Here’s how you would do that in Pandas:</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Importing libraries</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment" spellcheck="true"># Read csv file into a pandas dataframe</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"property data.csv"</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Take a look at the first few rows</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+   ST_NUM    ST_NAME OWN_OCCUPIED  NUM_BEDROOMS
+<span class="token number">0</span>   <span class="token number">104.0</span>     PUTNAM            Y           <span class="token number">3.0</span>
+<span class="token number">1</span>   <span class="token number">197.0</span>  LEXINGTON            N           <span class="token number">3.0</span>
+<span class="token number">2</span>     NaN  LEXINGTON            N           <span class="token number">3.0</span>
+<span class="token number">3</span>   <span class="token number">201.0</span>   BERKELEY          NaN           <span class="token number">1.0</span>
+<span class="token number">4</span>   <span class="token number">203.0</span>   BERKELEY            Y           <span class="token number">3.0</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>I know that I said we’ll be working with Pandas, but you can see that I also imported Numpy. We’ll use this a little bit later on to rename some missing values, so we might as well import it now.</p>
+<p>After importing the libraries we read the csv file into a Pandas dataframe. You can think of the dataframe as a spreadsheet.</p>
+<p>With the <code class=" language-python"><span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span></code>method, we can easily see the first few rows.</p>
+<p>Now I can answer my original question, <strong>what are my features?&nbsp; </strong>It’s pretty easy to infer the following features from the column names:</p>
+<ul>
+<li><code class=" language-python">ST_NUM</code>: Street number</li>
+<li><code class=" language-python">ST_NAME</code>: Street name</li>
+<li><code class=" language-python">OWN_OCCUPIED</code>: Is the residence owner occupied</li>
+<li><code class=" language-python">NUM_BEDROOMS</code>: Number of bedrooms</li>
+</ul>
+<p>We can also answer, <strong>what are the expected types?</strong></p>
+<ul>
+<li><code class=" language-python">ST_NUM</code>: float or int… some sort of numeric type</li>
+<li><code class=" language-python">ST_NAME</code>: string</li>
+<li><code class=" language-python">OWN_OCCUPIED</code>: string… Y (“Yes”) or N (“No”)</li>
+<li><code class=" language-python">NUM_BEDROOMS</code>: float or int, a numeric type</li>
+</ul>
+<p>To answer the next two questions, we’ll need to start getting more in-depth width Pandas. Let’s start looking at examples of how to detect missing values</p>
+<h2>Standard Missing Values</h2>
+<p>So what do I mean by “standard missing values”? These are missing values that Pandas can detect.</p>
+<p>Going back to our original data set, let’s take a look at the “Street Number” column.</p>
+<p><img class="wp-image-1575 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/standard-missing-values.jpg" alt="standard missing values" width="830" height="458" srcset="https://www.dataoptimal.com/wp-content/uploads/standard-missing-values.jpg 830w, https://www.dataoptimal.com/wp-content/uploads/standard-missing-values-300x166.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/standard-missing-values-768x424.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/standard-missing-values-610x337.jpg 610w" sizes="(max-width: 830px) 100vw, 830px"></p>
+<p>In the third column there’s an empty cell. In the seventh row there’s an “NA” value.</p>
+<p>Clearly these are both missing values.&nbsp;Let’s see how Pandas deals with these.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the ST_NUM column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the ST_NUM column</span>
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token number">104.0</span>
+<span class="token number">1</span>    <span class="token number">197.0</span>
+<span class="token number">2</span>      NaN
+<span class="token number">3</span>    <span class="token number">201.0</span>
+<span class="token number">4</span>    <span class="token number">203.0</span>
+<span class="token number">5</span>    <span class="token number">207.0</span>
+<span class="token number">6</span>      NaN
+<span class="token number">7</span>    <span class="token number">213.0</span>
+<span class="token number">8</span>    <span class="token number">215.0</span>
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>     <span class="token boolean">True</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>    <span class="token boolean">False</span>
+<span class="token number">6</span>     <span class="token boolean">True</span>
+<span class="token number">7</span>    <span class="token boolean">False</span>
+<span class="token number">8</span>    <span class="token boolean">False</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Taking a look at the column, we can see that Pandas filled in the blank space with “NA”. Using the <code class=" language-python">isnull<span class="token punctuation">(</span><span class="token punctuation">)</span></code> method, we can confirm that both the missing value and “NA” were recognized as missing values. Both boolean responses are <code class=" language-python"><span class="token boolean">True</span></code>.</p>
+<p>This is a simple example, but highlights an important point. Pandas will recognize both empty cells and “NA” types as missing values.&nbsp;In the next section, we’ll take a look at some types that Pandas won’t recognize.</p>
+<h2>Non-Standard Missing Values</h2>
+<p>Sometimes it might be the case where there’s missing values that have different formats.</p>
+<p>Let’s take a look at the “Number of Bedrooms” column to see what I mean.</p>
+<p><img class="wp-image-1585 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/non-standard-missing-values.jpg" alt="non-standard missing values" width="830" height="455" srcset="https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values.jpg 830w, https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values-300x164.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values-768x421.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/non-standard-missing-values-610x334.jpg 610w" sizes="(max-width: 830px) 100vw, 830px"></p>
+<p>In this column, there’s four missing values.</p>
+<ul>
+<li>n/a</li>
+<li>NA</li>
+<li>—</li>
+<li>na</li>
+</ul>
+<p>From the previous section, we know that Pandas will recognize “NA” as a missing value, but what about the others? Let’s take a look.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the NUM_BEDROOMS column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>      <span class="token number">3</span>
+<span class="token number">1</span>      <span class="token number">3</span>
+<span class="token number">2</span>    n<span class="token operator">/</span>a
+<span class="token number">3</span>      <span class="token number">1</span>
+<span class="token number">4</span>      <span class="token number">3</span>
+<span class="token number">5</span>    NaN
+<span class="token number">6</span>      <span class="token number">2</span>
+<span class="token number">7</span>     <span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">8</span>     na
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>    <span class="token boolean">False</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>     <span class="token boolean">True</span>
+<span class="token number">6</span>    <span class="token boolean">False</span>
+<span class="token number">7</span>    <span class="token boolean">False</span>
+<span class="token number">8</span>    <span class="token boolean">False</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Just like before, Pandas recognized the “NA” as a missing value. Unfortunately, the other types weren’t recognized.</p>
+<p>If there’s multiple users manually entering data, then this is a common problem. Maybe i like to use “n/a” but you like to use “na”.</p>
+<p>An easy way to detect these various formats is to put them in a list. Then when we import the data, Pandas will recognize them right away. Here’s an example of how we would do that.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Making a list of missing value types</span>
+missing_values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"n/a"</span><span class="token punctuation">,</span> <span class="token string">"na"</span><span class="token punctuation">,</span> <span class="token string">"--"</span><span class="token punctuation">]</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"property data.csv"</span><span class="token punctuation">,</span> na_values <span class="token operator">=</span> missing_values<span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Now let’s take another look at this column and see what happens.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the NUM_BEDROOMS column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token number">3.0</span>
+<span class="token number">1</span>    <span class="token number">3.0</span>
+<span class="token number">2</span>    NaN
+<span class="token number">3</span>    <span class="token number">1.0</span>
+<span class="token number">4</span>    <span class="token number">3.0</span>
+<span class="token number">5</span>    NaN
+<span class="token number">6</span>    <span class="token number">2.0</span>
+<span class="token number">7</span>    NaN
+<span class="token number">8</span>    NaN
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>     <span class="token boolean">True</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>     <span class="token boolean">True</span>
+<span class="token number">6</span>    <span class="token boolean">False</span>
+<span class="token number">7</span>     <span class="token boolean">True</span>
+<span class="token number">8</span>     <span class="token boolean">True</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>This time, all of the different formats were recognized as missing values.</p>
+<p>You might not be able to catch all of these right away. As you work through the data and see other types of missing values, you can add them to the list.</p>
+<p>It’s important to recognize these non-standard types of missing values for purposes of summarizing and transforming missing values. If you try and count the number of missing values before converting these non-standard types, you could end up missing a lot of missing values.</p>
+<p>In the next section we’ll take a look at a more complicated, but very common, type of missing value.</p>
+<h2>Unexpected Missing Values</h2>
+<p>So far we’ve seen standard missing values, and non-standard missing values. What if we an unexpected type?</p>
+<p>For example, if our feature is expected to be a string, but there’s a numeric type, then technically this is also a missing value.</p>
+<p>Let’s take a look at the “Owner Occupied” column to see what I’m talking about.</p>
+<p><img class="wp-image-1588 alignnone size-full" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/unexpected-missing-values.jpg" alt="unexpected missing values" width="829" height="457" srcset="https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values.jpg 829w, https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values-300x165.jpg 300w, https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values-768x423.jpg 768w, https://www.dataoptimal.com/wp-content/uploads/unexpected-missing-values-610x336.jpg 610w" sizes="(max-width: 829px) 100vw, 829px"></p>
+<p>From our previous examples, we know that Pandas will detect the empty cell in row seven as a missing value. Let’s confirm with some code.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the OWN_OCCUPIED column</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span> df<span class="token punctuation">[</span><span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Looking at the ST_NUM column</span>
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>      Y
+<span class="token number">1</span>      N
+<span class="token number">2</span>      N
+<span class="token number">3</span>     <span class="token number">12</span>
+<span class="token number">4</span>      Y
+<span class="token number">5</span>      Y
+<span class="token number">6</span>    NaN
+<span class="token number">7</span>      Y
+<span class="token number">8</span>      Y
+
+Out<span class="token punctuation">:</span>
+<span class="token number">0</span>    <span class="token boolean">False</span>
+<span class="token number">1</span>    <span class="token boolean">False</span>
+<span class="token number">2</span>    <span class="token boolean">False</span>
+<span class="token number">3</span>    <span class="token boolean">False</span>
+<span class="token number">4</span>    <span class="token boolean">False</span>
+<span class="token number">5</span>    <span class="token boolean">False</span>
+<span class="token number">6</span>     <span class="token boolean">True</span>
+<span class="token number">7</span>    <span class="token boolean">False</span>
+<span class="token number">8</span>    <span class="token boolean">False</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>In the fourth row, there’s the number 12. The response for Owner Occupied should clearly be a string (Y or N), so this numeric type should be a missing value.</p>
+<p>This example is a little more complicated so we’ll need to think through a strategy for detecting these types of missing values. There’s a number of different approaches, but here’s the way that I’m going to work thorugh this one.</p>
+<ol>
+<li>Loop through the OWN_OCCUPIED column</li>
+<li>Try and turn the entry&nbsp;into an integer</li>
+<li>If the entry can be changed into an integer, enter a missing value</li>
+<li>If the number can’t be an integer, we know it’s a string, so keep going</li>
+</ol>
+<p>Let’s take a look at the code and then we’ll go through it in detail.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Detecting numbers </span>
+cnt<span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> df<span class="token punctuation">[</span><span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        int<span class="token punctuation">(</span>row<span class="token punctuation">)</span>
+        df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>cnt<span class="token punctuation">,</span> <span class="token string">'OWN_OCCUPIED'</span><span class="token punctuation">]</span><span class="token operator">=</span>np<span class="token punctuation">.</span>nan
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+    cnt<span class="token operator">+=</span><span class="token number">1</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>In the code we’re looping through each entry in the “Owner Occupied” column. To try and change the entry to an integer, we’re using <code class=" language-python">int<span class="token punctuation">(</span>row<span class="token punctuation">)</span></code>.</p>
+<p>If the value can be changed to an integer, we change the entry to a missing value using Numpy’s <code class=" language-python">np<span class="token punctuation">.</span>nan</code>.</p>
+<p>On the other hand, if it can’t be changed to an integer, we <code class=" language-python"><span class="token keyword">pass</span></code> and keep going.</p>
+<p>You’ll notice that I used <code class=" language-python"><span class="token keyword">try</span></code> and <code class=" language-python"><span class="token keyword">except</span> ValueError</code>. This is called <a href="https://docs.python.org/2/tutorial/errors.html" target="_blank" rel="noopener">exception handling</a>, and we use this to handle errors.</p>
+<p>If we were to try and change an entry into an integer and it couldn’t be changed, then a <code class=" language-python">ValueError</code> would be returned, and the code would stop. To deal with this, we use exception handling to recognize these errors, and keep going.</p>
+<p>Another important bit of the code is the <code class=" language-python"><span class="token punctuation">.</span>loc</code> method. This is the preferred Pandas method for modfiying entries in place. For more info on this you can check out the <a href="http://pandas.pydata.org/pandas-docs/version/0.21/generated/pandas.DataFrame.loc.html" target="_blank" rel="noopener">Pandas documentation</a>.</p>
+<p>Now that we’ve worked through the different ways of detecting missing values, we’ll take a look at summarizing, and replacing them.</p>
+<h2>Summarizing Missing Values</h2>
+<p>After we’ve cleaned the missing values, we will probably want to summarize them. For instance, we might want to look at the total number of missing values for each feature.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Total missing values for each feature</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+ST_NUM          <span class="token number">2</span>
+ST_NAME         <span class="token number">0</span>
+OWN_OCCUPIED    <span class="token number">2</span>
+NUM_BEDROOMS    <span class="token number">4</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Other times we might want to do a quick check to see if we have any missing values at all.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Any missing values?</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values<span class="token punctuation">.</span>any<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+<span class="token boolean">True</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>We might also want to get a total count of missing values.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Total number of missing values</span>
+<span class="token keyword">print</span> df<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<pre class="language-python code-toolbar"><code class=" language-python">Out<span class="token punctuation">:</span>
+<span class="token number">8</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>Now that we’ve summarized the number of missing values, let’s take a look at doing some simple replacements.</p>
+<h2>Replacing</h2>
+<p>Often times you’ll have to figure out how you want to handle missing values.</p>
+<p>Sometimes you’ll simply want to delete those rows, other times you’ll replace them.</p>
+<p>As I mentioned earlier, this shouldn’t be taken lightly. We’ll go over some basic imputations, but for a detailed statistical approach for <a title="dealing with missing data" href="https://github.com/matthewbrems/ODSC-missing-data-may-18/blob/master/Analysis%20with%20Missing%20Data.pdf" target="_blank" rel="noopener noreferrer">dealing with missing data</a>, check out these awesome slides from data scientist Matt Brems.</p>
+<p>That being said, maybe you just want to fill in missing values with a single value.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Replace missing values with a number</span>
+df<span class="token punctuation">[</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">125</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>More likely, you might want to do a location based imputation. Here’s how you would do that.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Location based replacement</span>
+df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'ST_NUM'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">125</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>A very common way to replace missing values is using a median.</p>
+<pre class="language-python code-toolbar"><code class=" language-python"><span class="token comment" spellcheck="true"># Replace using median </span>
+median <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>median<span class="token punctuation">(</span><span class="token punctuation">)</span>
+df<span class="token punctuation">[</span><span class="token string">'NUM_BEDROOMS'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span>median<span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code><div class="toolbar"><div class="toolbar-item"><a>Copy</a></div></div></pre>
+<p>We’ve gone over a few simple ways to replace missing values, but be sure to check out Matt’s slides for the proper techniques.</p>
+<h2>Conclusion</h2>
+<p>Dealing with messy data is inevitable. Data cleaning is just part of the process on a data science project.</p>
+<p>In this article we went over some ways to detect, summarize, and replace missing values.</p>
+<p>For even more resources about data cleaning, check out these <a href="https://www.dataoptimal.com/data-science-books-2018/" target="_blank" rel="noopener">data science books</a>.</p>
+<p>Armed with these techniques, you’ll spend less time data cleaning, and more time exploring and modeling.</p>
+<p><strong>Leave a comment below and let me know which technique you find most useful!</strong></p>
+				</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_button_module_wrapper et_pb_button_3_wrapper et_pb_button_alignment_ et_pb_module ">
+				<a id="data_cleaning_bonus" class="et_pb_button et_pb_button_3 et_pb_bg_layout_light" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/">FREE Data Cleaning Cheat Sheet</a>
+			</div><div class="et_pb_module et_pb_comments_1 et_pb_comments_module et_pb_bg_layout_light et_pb_no_comments_count">
+				
+				
+				<!-- You can start editing here. -->
+
+<section id="comment-wrap">
+	<h1 id="comments" class="page_title">13 Comments</h1>
+			
+					<ol class="commentlist clearfix">
+					<li class="comment even thread-even depth-1" id="li-comment-16">
+		<article id="comment-16" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Satish" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/b40769083d3425e5078c130d2b325bc9.png" srcset="https://secure.gravatar.com/avatar/b40769083d3425e5078c130d2b325bc9?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Satish</span>				<span class="comment_date">
+				on July 12, 2018 at 11:19 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks for the great tutorial.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-16" data-commentid="16" data-postid="1476" data-belowelement="comment-16" data-respondelement="respond" aria-label="Reply to Satish">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-17">
+		<article id="comment-17" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on July 12, 2018 at 1:40 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks Satish, glad you enjoyed it!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-17" data-commentid="17" data-postid="1476" data-belowelement="comment-17" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-18">
+		<article id="comment-18" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Shoeb Mohammad" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/1dd988f3450e97d38b7ee4ce59b13a7b.png" srcset="https://secure.gravatar.com/avatar/1dd988f3450e97d38b7ee4ce59b13a7b?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Shoeb Mohammad</span>				<span class="comment_date">
+				on July 12, 2018 at 6:01 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Literally It is the best easy tutorial to make beginners understand each and every word of the code. Thank you DataOptimal for this wonderful tutorial and it actually helped.</p>
+<p>Thanks again. Keep up the great work.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-18" data-commentid="18" data-postid="1476" data-belowelement="comment-18" data-respondelement="respond" aria-label="Reply to Shoeb Mohammad">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-19">
+		<article id="comment-19" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on July 12, 2018 at 6:43 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thank you for the kind words Shoeb, I’m glad it helped!</p>
+<p>We’ll be publishing plenty more posts, so be sure to check back often!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-19" data-commentid="19" data-postid="1476" data-belowelement="comment-19" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-85">
+		<article id="comment-85" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Ravi" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/d97d7498df8b21e9c62d4df17a6a8e35.png" srcset="https://secure.gravatar.com/avatar/d97d7498df8b21e9c62d4df17a6a8e35?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Ravi</span>				<span class="comment_date">
+				on August 9, 2018 at 4:49 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Wonderful and effective explanation with an example, Great work guys @DataOptimal.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-85" data-commentid="85" data-postid="1476" data-belowelement="comment-85" data-respondelement="respond" aria-label="Reply to Ravi">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-100">
+		<article id="comment-100" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on August 28, 2018 at 2:11 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks, glad you enjoyed it!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-100" data-commentid="100" data-postid="1476" data-belowelement="comment-100" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-96">
+		<article id="comment-96" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="sasha" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/1944f6f01966afc2a4220ff38af03551.png" srcset="https://secure.gravatar.com/avatar/1944f6f01966afc2a4220ff38af03551?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">sasha</span>				<span class="comment_date">
+				on August 28, 2018 at 4:24 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>This was hands on the best explanation for using pandas, it was well documented and helped me a lot in my preparation. Thanks a lot. you should do more tutorials, call it data science made simple or something <img draggable="false" class="emoji" alt="😉" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/1f609.svg"></p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-96" data-commentid="96" data-postid="1476" data-belowelement="comment-96" data-respondelement="respond" aria-label="Reply to sasha">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-101">
+		<article id="comment-101" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on August 28, 2018 at 2:12 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>I’m glad you enjoyed it Sasha! We’re working on plenty of more tutorials, so stay tuned!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-101" data-commentid="101" data-postid="1476" data-belowelement="comment-101" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-143">
+		<article id="comment-143" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="KARN KUMAR" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/144d9ce1fa244416b1fe639df3479279.png" srcset="https://secure.gravatar.com/avatar/144d9ce1fa244416b1fe639df3479279?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">KARN KUMAR</span>				<span class="comment_date">
+				on September 11, 2018 at 2:52 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>This is awesome tutorial, would be great if you could create more videos or blogs.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-143" data-commentid="143" data-postid="1476" data-belowelement="comment-143" data-respondelement="respond" aria-label="Reply to KARN KUMAR">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-238">
+		<article id="comment-238" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on October 24, 2018 at 6:42 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks Karn! I’ll be posting more soon, so stay tuned!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-238" data-commentid="238" data-postid="1476" data-belowelement="comment-238" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-204">
+		<article id="comment-204" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Junior" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/6da3594192d99292b8af9ec579aa679b.jpeg" srcset="https://secure.gravatar.com/avatar/6da3594192d99292b8af9ec579aa679b?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">Junior</span>				<span class="comment_date">
+				on October 11, 2018 at 8:06 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>This is a great resource, exactly what I was looking for! Thank you!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-204" data-commentid="204" data-postid="1476" data-belowelement="comment-204" data-respondelement="respond" aria-label="Reply to Junior">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+<ul class="children">
+	<li class="comment byuser comment-author-dataoptimal_yhd3xg bypostauthor odd alt depth-2" id="li-comment-239">
+		<article id="comment-239" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="DataOptimal" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/ea55ae210aab4775c88a4b3c3a6ee401.jpeg" srcset="https://secure.gravatar.com/avatar/ea55ae210aab4775c88a4b3c3a6ee401?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn">DataOptimal</span>				<span class="comment_date">
+				on October 24, 2018 at 6:42 pm				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>You’re welcome Junior, glad you enjoyed it!</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-239" data-commentid="239" data-postid="1476" data-belowelement="comment-239" data-respondelement="respond" aria-label="Reply to DataOptimal">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-207">
+		<article id="comment-207" class="comment-body clearfix">
+			<div class="comment_avatar">
+				<img alt="Jacobs" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/d39a6434355dad80f2866382a86826f9.png" srcset="https://secure.gravatar.com/avatar/d39a6434355dad80f2866382a86826f9?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80">			</div>
+
+			<div class="comment_postinfo">
+				<span class="fn"><a href="http://website/" rel="external nofollow" class="url">Jacobs</a></span>				<span class="comment_date">
+				on October 12, 2018 at 7:13 am				</span>
+										</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Do you have a similar example of data cleaning with R</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#comment-207" data-commentid="207" data-postid="1476" data-belowelement="comment-207" data-respondelement="respond" aria-label="Reply to Jacobs">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+</li><!-- #comment-## -->
+			</ol>
+		
+		
+							<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span>Submit a Comment</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.dataoptimal.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment" style="display: none;">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author" style="display: none;">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email" style="display: none;">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url" style="display: none;">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><button name="submit" type="submit" id="et_pb_submit" class="submit et_pb_button">Submit Comment</button> <input type="hidden" name="comment_post_ID" value="1476" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="0a6dd0783a"></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="185"></p>			</form>
+			</div><!-- #respond -->
+		</section>
+
+			</div>
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_3    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_signup_1 et_pb_newsletter_layout_left_right et_pb_newsletter et_pb_subscribe clearfix et_pb_bg_layout_dark  et_pb_text_align_left">
+				
+				
+				<div class="et_pb_newsletter_description">
+					<h2 class="et_pb_module_header">Learn Data Science Fast</h2>
+					<p style="text-align: center;">Learn how to get a data science job with techniques that I used to land a job in under 3 months.</p><br>
+
+				</div>
+				
+				<div class="et_pb_newsletter_form">
+					<form method="post">
+						<div class="et_pb_newsletter_result et_pb_newsletter_error"></div>
+						<div class="et_pb_newsletter_result et_pb_newsletter_success">
+							<h2>Welcome to the DataOptimal community!</h2>
+						</div>
+						<div class="et_pb_newsletter_fields">
+							
+							
+							
+					<p class="et_pb_newsletter_field et_pb_contact_field_last">
+						<label class="et_pb_contact_form_label" for="et_pb_signup_email" style="display: none;">Email</label>
+						<input id="et_pb_signup_email" class="input" type="text" placeholder="Email" name="et_pb_signup_email">
+					</p>
+							
+							
+					<p class="et_pb_newsletter_button_wrap">
+						<a class="et_pb_newsletter_button et_pb_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#" data-icon="">
+							<span class="et_subscribe_loader"></span>
+							<span class="et_pb_newsletter_button_text">Sign Up</span>
+						</a>
+					</p>
+							
+						</div>
+						
+						<input type="hidden" value="mailchimp" name="et_pb_signup_provider">
+						<input type="hidden" value="94d8133e1f" name="et_pb_signup_list_id">
+						<input type="hidden" value="DataOptimal" name="et_pb_signup_account_name">
+						<input type="hidden" value="true" name="et_pb_signup_ip_address">
+					</form>
+				</div>
+			</div><div class="et_pb_module et_pb_cta_1 et_pb_promo et_pb_bg_layout_dark  et_pb_text_align_center">
+				
+				
+				<div class="et_pb_promo_description">
+					
+					Get Access to the top Data Science books in 2018.
+				</div>
+				<div class="et_pb_button_wrapper"><a class="et_pb_button et_pb_promo_button" href="https://www.dataoptimal.com/data-cleaning-with-python-2018/#">Get Access Now</a></div>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			<div class="et_pb_row"><div class="et_pb_column et_pb_column_4_4"><div class="et_social_inline et_social_mobile_on et_social_inline_bottom">
+				<div class="et_social_networks et_social_4col et_social_slide et_social_rounded et_social_left et_social_no_animation et_social_withcounts et_social_outer_dark">
+					
+					<ul class="et_social_icons_container"><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Data%20Cleaning%20with%20Python%20and%20Pandas%3A%20Detecting%20Missing%20Values&amp;url=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="twitter" data-post_id="1476" data-social_type="share" data-location="inline" data-min_count="10">
+										<i class="et_social_icon et_social_icon_twitter"></i><div class="et_social_network_label"></div><span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F&amp;t=Data%20Cleaning%20with%20Python%20and%20Pandas%3A%20Detecting%20Missing%20Values" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="facebook" data-post_id="1476" data-social_type="share" data-location="inline" data-min_count="10">
+										<i class="et_social_icon et_social_icon_facebook"></i><div class="et_social_network_label"></div><span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F&amp;title=Data%20Cleaning%20with%20Python%20and%20Pandas%3A%20Detecting%20Missing%20Values" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="linkedin" data-post_id="1476" data-social_type="share" data-location="inline" data-min_count="10">
+										<i class="et_social_icon et_social_icon_linkedin"></i><div class="et_social_network_label"></div><span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+				</div>
+			</div></div></div></div> <!-- .et_pb_section -->
+			</div>
+			
+		</div><span class="et_bloom_bottom_trigger"></span><span class="et_social_bottom_trigger"></span>					</div> <!-- .entry-content -->
+					<div class="et_post_meta_wrapper">
+										</div> <!-- .et_post_meta_wrapper -->
+				</article> <!-- .et_pb_post -->
+
+						</div> <!-- #left-area -->
+
+					</div> <!-- #content-area -->
+	</div> <!-- .container -->
+	</div> <!-- #main-content -->
+
+
+			<footer id="main-footer">
+				
+
+		
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-twitter">
+		<a href="https://twitter.com/DataOptimal" class="icon">
+			<span>Twitter</span>
+		</a>
+	</li>
+
+</ul><div id="footer-info">© DataOptimal |  2018</div>					</div>	<!-- .container -->
+				</div>
+			</footer> <!-- #main-footer -->
+		</div> <!-- #et-main-area -->
+
+
+	</div> <!-- #page-container -->
+
+	<div class="et_bloom_popup et_bloom_optin et_bloom_resize et_bloom_optin_4 et_bloom_trigger_click" data-trigger_click="a.blog-cta-mobile" data-success_action_details="redirect_url|https://www.dataoptimal.com/wp-content/uploads/Data-Science-Books-for-2018.pdf">
+							<div class="et_bloom_form_container et_bloom_popup_container et_bloom_form_bottom et_bloom_rounded et_bloom_form_text_dark et_bloom_animation_fadein et_bloom_success_action" style="max-height: 574px; top: 307px;">
+								
+			<div class="et_bloom_form_container_wrapper clearfix" style="max-height: 554px;">
+				<div class="et_bloom_header_outer">
+					<div class="et_bloom_form_header et_bloom_header_text_dark">
+						<img src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/premade-image-16.png" alt="Free Bonus: Top 12 Data Science Books for 2018" class=" et_bloom_image_slideup et_bloom_image">
+						<div class="et_bloom_form_text">
+						<h2>Free Bonus: Top 12 Data Science Books for 2018</h2>
+					</div>
+						
+					</div>
+				</div>
+				<div class="et_bloom_form_content et_bloom_1_field et_bloom_bottom_inline">
+					
+					
+					<form method="post" class="clearfix">
+						<div class="et_bloom_fields">
+							
+							<p class="et_bloom_popup_input et_bloom_subscribe_email">
+								<input placeholder="Email">
+							</p>
+							
+							<button data-optin_id="optin_4" data-service="mailchimp" data-list_id="94d8133e1f" data-page_id="1476" data-account="DataOptimal" data-ip_address="true" class="et_bloom_submit_subscription">
+								<span class="et_bloom_subscribe_loader"></span>
+								<span class="et_bloom_button_text et_bloom_button_text_color_light">Get The Bonus!</span>
+							</button>
+						</div>
+					</form>
+					<div class="et_bloom_success_container">
+						<span class="et_bloom_success_checkmark"></span>
+					</div>
+					<h2 class="et_bloom_success_message">You have Successfully Subscribed!</h2>
+					
+				</div>
+			</div>
+			<span class="et_bloom_close_button"></span>
+							</div>
+						</div><div class="et_bloom_popup et_bloom_optin et_bloom_resize et_bloom_optin_6 et_bloom_trigger_click" data-trigger_click="*.et_pb_cta_0" data-success_action_details="redirect_url|https://www.dataoptimal.com/wp-content/uploads/Data-Science-Books-for-2018.pdf">
+							<div class="et_bloom_form_container et_bloom_popup_container et_bloom_form_bottom et_bloom_rounded et_bloom_form_text_dark et_bloom_animation_fadein et_bloom_success_action" style="max-height: 574px; top: 307px;">
+								
+			<div class="et_bloom_form_container_wrapper clearfix" style="max-height: 554px;">
+				<div class="et_bloom_header_outer">
+					<div class="et_bloom_form_header et_bloom_header_text_dark">
+						<img src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/premade-image-16.png" alt="Top 12 Data Science Books for 2018" class=" et_bloom_image_slideup et_bloom_image">
+						<div class="et_bloom_form_text">
+						<h2>Top 12 Data Science Books for 2018</h2><p>Sign up with your email address to get instant access for free!</p>
+					</div>
+						
+					</div>
+				</div>
+				<div class="et_bloom_form_content et_bloom_1_field et_bloom_bottom_inline">
+					
+					
+					<form method="post" class="clearfix">
+						<div class="et_bloom_fields">
+							
+							<p class="et_bloom_popup_input et_bloom_subscribe_email">
+								<input placeholder="Email">
+							</p>
+							
+							<button data-optin_id="optin_6" data-service="mailchimp" data-list_id="94d8133e1f" data-page_id="1476" data-account="DataOptimal" data-ip_address="false" class="et_bloom_submit_subscription">
+								<span class="et_bloom_subscribe_loader"></span>
+								<span class="et_bloom_button_text et_bloom_button_text_color_light">Get Access Now!</span>
+							</button>
+						</div>
+					</form>
+					<div class="et_bloom_success_container">
+						<span class="et_bloom_success_checkmark"></span>
+					</div>
+					<h2 class="et_bloom_success_message">You have Successfully Subscribed!</h2>
+					
+				</div>
+			</div>
+			<span class="et_bloom_close_button"></span>
+							</div>
+						</div><div class="et_bloom_popup et_bloom_optin et_bloom_resize et_bloom_optin_8 et_bloom_auto_popup et_bloom_trigger_bottom et_bloom_trigger_click" data-delay="20" data-cookie_duration="1" data-trigger_click="a#data_cleaning_bonus" data-success_action_details="redirect_url|https://www.dataoptimal.com/wp-content/uploads/data-cleaning-cheat-sheet.pdf">
+							<div class="et_bloom_form_container et_bloom_popup_container et_bloom_form_bottom et_bloom_rounded et_bloom_form_text_dark et_bloom_animation_fadein et_bloom_success_action" style="max-height: 574px; top: 307px;">
+								
+			<div class="et_bloom_form_container_wrapper clearfix" style="max-height: 554px;">
+				<div class="et_bloom_header_outer">
+					<div class="et_bloom_form_header split et_bloom_header_text_dark">
+						<img src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/premade-image-03.png" alt="Data Cleaning Cheat Sheet" class="et_bloom_image_slideup et_bloom_image et_bloom_visible_image">
+						<div class="et_bloom_form_text">
+						<h2>Data Cleaning Cheat Sheet</h2><p>Click to get instant access to the FREE Data Cleaning Cheat Sheet!</p>
+					</div>
+						
+					</div>
+				</div>
+				<div class="et_bloom_form_content et_bloom_1_field et_bloom_bottom_inline">
+					
+					
+					<form method="post" class="clearfix">
+						<div class="et_bloom_fields">
+							
+							<p class="et_bloom_popup_input et_bloom_subscribe_email">
+								<input placeholder="Email">
+							</p>
+							
+							<button data-optin_id="optin_8" data-service="mailchimp" data-list_id="94d8133e1f" data-page_id="1476" data-account="DataOptimal" data-ip_address="true" class="et_bloom_submit_subscription">
+								<span class="et_bloom_subscribe_loader"></span>
+								<span class="et_bloom_button_text et_bloom_button_text_color_light">GET ACCESS NOW!</span>
+							</button>
+						</div>
+					</form>
+					<div class="et_bloom_success_container">
+						<span class="et_bloom_success_checkmark"></span>
+					</div>
+					<h2 class="et_bloom_success_message">You have Successfully Subscribed!</h2>
+					
+				</div>
+			</div>
+			<span class="et_bloom_close_button"></span>
+							</div>
+						</div><div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_grow et_social_space et_social_mobile_off" style="top: 227px;">
+					
+					<ul class="et_social_icons_container"><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Data%20Cleaning%20with%20Python%20and%20Pandas%3A%20Detecting%20Missing%20Values&amp;url=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="1476" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F&amp;t=Data%20Cleaning%20with%20Python%20and%20Pandas%3A%20Detecting%20Missing%20Values" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="1476" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.dataoptimal.com%2Fdata-cleaning-with-python-2018%2F&amp;title=Data%20Cleaning%20with%20Python%20and%20Pandas%3A%20Detecting%20Missing%20Values" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="1476" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+					<span class="et_social_hide_sidebar et_social_icon"></span>
+				</div>	<script type="text/javascript">
+			</script>
+	<script src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/prism.js.download"></script><link rel="stylesheet" id="et_bloom-css-css" href="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/style(3).css" type="text/css" media="all">
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/idle-timer.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https:\/\/www.dataoptimal.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/www.dataoptimal.com\/data-cleaning-with-python-2018\/","stats_nonce":"ccacab6202","share_counts":"7f503bd205","follow_counts":"97bb805fcc","total_counts":"a608b0ee53","media_single":"907b052008","media_total":"6d4736b9d0","generate_all_window_nonce":"40a16f2d6f","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/custom.js.download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/comment-reply.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_shortcodes_strings = {"previous":"Previous","next":"Next"};
+var et_pb_custom = {"ajaxurl":"https:\/\/www.dataoptimal.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/www.dataoptimal.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/www.dataoptimal.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"33dcbd74e5","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"4890f42d47","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","is_ab_testing_active":"","page_id":"1476","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":""};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/custom.min.js.download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/common.js.download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/prism-js.min.js.download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/wp-embed.min.js.download"></script>
+<script async="async" type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/form.js.download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/jquery.uniform.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var bloomSettings = {"ajaxurl":"https:\/\/www.dataoptimal.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/www.dataoptimal.com\/data-cleaning-with-python-2018\/","stats_nonce":"c238fabea4","subscribe_nonce":"9e9e1bfae8","is_user_logged_in":"not_logged"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/custom.js(1).download"></script>
+<script type="text/javascript" src="./Data Cleaning with Python and Pandas_ Detecting Missing Values_files/idle-timer.min.js(1).download"></script>
+
+
+<!-- Dynamic page generated in 2.235 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-03-22 04:41:37 -->
+
+<!-- super cache --></body></html>
