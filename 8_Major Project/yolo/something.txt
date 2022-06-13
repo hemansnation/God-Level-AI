@@ -1,0 +1,16 @@
+cfg folder
+wget https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg
+
+# create a file name darknet.py
+darknet is the name of the architecture of yolo.
+
+
+cfg file
+
+5 types of layers are there in yolo
+
+epoch
+
+
+
+
