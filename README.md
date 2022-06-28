@@ -18,7 +18,6 @@ Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
 11. Development‌ ‌Operations‌ ‌with‌ ‌Azure‌
 12. Five‌ ‌Major‌ ‌Projects‌ ‌and‌ ‌Git‌ 
 
-
 ‌### Technology‌ ‌Stack‌ ‌
 ‌
 - Python‌
