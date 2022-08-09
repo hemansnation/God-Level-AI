@@ -2,6 +2,13 @@
 
 ![Data Science and ML Header](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/blob/master/images/Data-Science-and-ML-Batch.jpeg)
 
+### What we will do and gain?
+
+- Build an in-depth understanding of all the data concepts. 
+- Create your strong social media profile on LinkedIn and GitHub.
+- Build 15+ projects including 5+ Major Projects.
+- Showcase your skills with a portfolio of real projects.
+- Work on Live projects in parallel to understand how companies create end-to-end software solutions and apply ML models to real-life problems.
 
 #### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌12‌ ‌Sections‌ ‌
 ‌
