@@ -1,5 +1,8 @@
 # Data Science ML Full Stack
 
+![Data Science and ML Header](https://github.com/hemansnation/Python-Roadmap-2022/blob/main/images/pythoncoreheader.png)
+
+
 #### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌12‌ ‌Sections‌ ‌
 ‌
 Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
