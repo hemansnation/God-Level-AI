@@ -285,12 +285,12 @@ https://bit.ly/3BU3lKM
 
 Connect with me on these platforms:
 
-LinkedIn: linkedin.com/in/hemansnation
+LinkedIn: https://www.linkedin.com/in/hemansnation/
 
-Twitter: twitter.com/hemansnation
+Twitter: https://twitter.com/hemansnation
 
-GitHub: github.com/hemansnation
+GitHub: https://github.com/hemansnation
 
-Instagram: instagram.com/masterdexter.ai
+Instagram: https://www.instagram.com/masterdexter.ai/
 
 
