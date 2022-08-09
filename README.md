@@ -10,10 +10,9 @@
 - Showcase your skills with a portfolio of real projects.
 - Work on Live projects in parallel to understand how companies create end-to-end software solutions and apply ML models to real-life problems.
 
-#### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌12‌ ‌Sections‌ ‌
+### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌12‌ ‌Sections‌ ‌
 ‌
 Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
-‌
 ‌
 1. Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌
 2. Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌
@@ -28,8 +27,8 @@ Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
 11. Development‌ ‌Operations‌ ‌with‌ ‌Azure‌
 12. Five‌ ‌Major‌ ‌Projects‌ ‌and‌ ‌Git‌ 
 
-### Technology‌ ‌Stack‌ ‌
-‌
+### Technology‌ ‌Stack‌
+
 - Python‌
 - Data‌ ‌Structures‌
 - NumPy‌
