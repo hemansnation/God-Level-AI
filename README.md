@@ -290,7 +290,10 @@ We follow project-based learning and we will work on all the projects in paralle
 
 
 #### Join the Data Science & ML Full Stack WhatsApp Group here:
-https://bit.ly/3BU3lKM
+https://bit.ly/3qxKEFP
+
+#### Join Telegram for Data Science ML AI Resources:
+https://bit.ly/3qxKEFP
 
 Connect with me on these platforms:
 
