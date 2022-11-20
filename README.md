@@ -293,7 +293,7 @@ We follow project-based learning and we will work on all the projects in paralle
 https://bit.ly/3qxKEFP
 
 #### Join Telegram for Data Science ML AI Resources:
-https://bit.ly/3qxKEFP
+https://t.me/+sREuRiFssMo4YWJl
 
 Connect with me on these platforms:
 
