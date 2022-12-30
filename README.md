@@ -331,7 +331,8 @@ Instagram: https://www.instagram.com/masterdexter.ai/
 
 
 ### Are you a professional?
-For One-on-One sessions for Python, Data Science, Machine Learning, and Data Engineering. Mail your requirements Here: connect@himanshuramchandani.co
+For One-on-One sessions for Python, Data Science, Machine Learning, and Data Engineering.
+<br>Email your requirements Here: connect@himanshuramchandani.co
 
 
 
