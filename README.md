@@ -1,6 +1,5 @@
 # Data Science ML Full Stack
 
-![Data Science and ML Header](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/blob/master/images/Data-Science-and-ML-Batch.jpeg)
 
 ### What we will do and gain?
 
@@ -14,18 +13,20 @@
 ‌
 Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
 ‌
-1. Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌
-2. Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌
-3. Pandas‌ ‌Numpy‌ ‌Matplotlib‌
-4. Statistics‌
-5. Machine‌ ‌Learning‌
-6. Natural‌ ‌Language‌ ‌Processing‌
-7. Computer‌ ‌Vision‌‌
-8. Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌
-9. Structure‌ ‌Query‌ ‌Language‌ ‌(SQL)‌
-10. Big‌ ‌Data‌ ‌and‌ ‌PySpark‌
-11. Development‌ ‌Operations‌ ‌with‌ ‌Azure‌
-12. Five‌ ‌Major‌ ‌Projects‌ ‌and‌ ‌Git‌ 
+1. [Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/edit/master/README.md#1--python-programming-and-logic-building)
+2. [Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/edit/master/README.md#2--data-structure--algorithms)
+3. [Pandas‌ ‌Numpy‌ ‌Matplotlib‌]()
+4. [Statistics‌]()
+5. [Machine‌ ‌Learning‌]()
+6. [ML Operations]()
+7. [Natural‌ ‌Language‌ ‌Processing‌]()
+8. [Computer‌ ‌Vision‌‌]()
+9. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌]()
+10. [Structure‌ ‌Query‌ ‌Language‌ ‌(SQL)‌]()
+11. [Data Engineering]()
+12. [Data System Design]()
+13. [Five‌ ‌Major‌ ‌Projects‌]()
+14. [Git & GitHub]()
 
 ### Technology‌ ‌Stack‌
 
