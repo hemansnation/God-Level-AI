@@ -290,14 +290,37 @@ We follow project-based learning and we will work on all the projects in paralle
 
 
 
-#### Join the Data Science & ML Full Stack WhatsApp Group here:
-https://bit.ly/3qxKEFP
+# Resources
 
-#### Join Telegram for Data Science ML AI Resources:
+### Datasets 
+
+1️⃣ [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets)
+This list of a topic-centric public data sources in high quality.
+
+2️⃣[NLP Datasets](https://github.com/niderhoff/nlp-datasets) 
+Alphabetical list of free/public domain datasets with text data for use in NLP.
+ 
+3️⃣[Awesome Dataset Tools](https://github.com/jsbroks/awesome-dataset-tools)
+A curated list of awesome dataset tools.
+
+4️⃣[Awesome time series database](https://github.com/xephonhq/awesome-time-series-database)
+A curated list of time series databases.
+ 
+5️⃣[Awesome-Cybersecurity-Datasets](https://github.com/shramos/Awesome-Cybersecurity-Datasets)
+A curated list of amazingly awesome Cybersecurity datasets.
+ 
+6️⃣[Awesome Robotics Datasets](https://github.com/mint-lab/awesome-robotics-datasets)
+Robotics Dataset Collections.
+ 
+
+
+
+
+
+### Join Telegram for Data Science ML AI Resources:
 https://t.me/+sREuRiFssMo4YWJl
 
-Connect with me on these platforms:
-
+### Connect with me on these platforms:
 LinkedIn: https://www.linkedin.com/in/hemansnation/
 
 Twitter: https://twitter.com/hemansnation
@@ -305,5 +328,13 @@ Twitter: https://twitter.com/hemansnation
 GitHub: https://github.com/hemansnation
 
 Instagram: https://www.instagram.com/masterdexter.ai/
+
+
+### Are you a professional?
+DM for One-on-One sessions for Python, Data Science, Machine Learning, and Data Engineering.
+Here: https://bit.ly/3U6zQvQ
+
+
+
 
 
