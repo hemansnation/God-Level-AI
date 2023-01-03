@@ -14,10 +14,10 @@
 Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
 ‌
 1. [Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌](#1--python-programming-and-logic-building)
-2. [Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/edit/master/README.md#2--data-structure--algorithms)
-3. [Pandas‌ ‌Numpy‌ ‌Matplotlib‌](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/edit/master/README.md#3--pandas-numpy-matplotlib)
-4. [Statistics‌](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/edit/master/README.md#4--statistics)
-5. [Machine‌ ‌Learning‌](https://github.com/hemansnation/Data-Science-ML-Full-Stack-2022/edit/master/README.md#5--machine-learning)
+2. [Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌](#2--data-structure--algorithms)
+3. [Pandas‌ ‌Numpy‌ ‌Matplotlib‌](#3--pandas-numpy-matplotlib)
+4. [Statistics‌](#4--statistics)
+5. [Machine‌ ‌Learning‌](#5--machine-learning)
 6. [ML Operations]()
 7. [Natural‌ ‌Language‌ ‌Processing‌]()
 8. [Computer‌ ‌Vision‌‌]()
