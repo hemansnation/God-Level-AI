@@ -27,6 +27,8 @@ Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
 12. [Data System Design]()
 13. [Five‌ ‌Major‌ ‌Projects‌]()
 14. [Git & GitHub]()
+15. [Interview Preparations]()
+16. [Personal Branding and portfolio]()
 
 ### Technology‌ ‌Stack‌
 
