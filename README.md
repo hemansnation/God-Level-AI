@@ -18,17 +18,21 @@ Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
 3. [Pandas‌ ‌Numpy‌ ‌Matplotlib‌](#3--pandas-numpy-matplotlib)
 4. [Statistics‌](#4--statistics)
 5. [Machine‌ ‌Learning‌](#5--machine-learning)
-6. [ML Operations]()
-7. [Natural‌ ‌Language‌ ‌Processing‌]()
-8. [Computer‌ ‌Vision‌‌]()
-9. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌]()
-10. [Structure‌ ‌Query‌ ‌Language‌ ‌(SQL)‌]()
-11. [Data Engineering]()
-12. [Data System Design]()
-13. [Five‌ ‌Major‌ ‌Projects‌]()
-14. [Git & GitHub]()
-15. [Interview Preparations]()
-16. [Personal Branding and portfolio]()
+6. [ML Operations](#6--mlops)
+7. [Natural‌ ‌Language‌ ‌Processing‌](#7--natural-language-processing)
+8. [Computer‌ ‌Vision‌‌](#8--computer-vision)
+9. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌](#9--data-visualization-with-tableau)
+10. [Structure‌ ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structure-query-language-sql)
+11. [Data Engineering](#11--data-engineering)
+12. [Data System Design](#12--data-system-design)
+13. [Five‌ ‌Major‌ ‌Projects‌](#13--five-major-projects-and-git)
+14. [Git & GitHub](#14--git--github)
+15. [Interview Preparations](#15--interview-preperation)
+16. [Personal Branding and portfolio](#16--personal-profile--portfolio)
+
+### [Resources](#resources)
+
+- [Dataset Collection]()
 
 ### Technology‌ ‌Stack‌
 
@@ -163,8 +167,11 @@ The best way to master machine learning algorithms is to work with the Scikit-Le
 - Predictive Analytics
 - Exploratory Data Analysis
 
+# 6 | MLOps
 
-# 6 | Natural Language Processing
+
+
+# 7 | Natural Language Processing
 If you are interested in working with Text, you should do some of the work an NLP Engineer do and understand the working of Language models.
 
 - Sentiment analysis
@@ -180,7 +187,7 @@ If you are interested in working with Text, you should do some of the work an NL
 - Identifying the gender
 
 
-# 7 | Computer Vision
+# 8 | Computer Vision
 To work on image and video analytics we can master computer vision. To work on computer vision we have to understand images.
 
 - PyTorch Tensors
@@ -204,7 +211,7 @@ To work on image and video analytics we can master computer vision. To work on c
 - Detecting SIFT feature points
 
 
-# 8 | Data Visualization with Tableau
+# 9 | Data Visualization with Tableau
 
 How to use it Visual Perception
 
@@ -218,7 +225,7 @@ How to use it Visual Perception
 - Conditional Calculation, Parameterized Calculation
 
 
-# 9 | Structure Query Language (SQL)
+# 10 | Structure Query Language (SQL)
 - Setup SQL server
 - Basics of SQL
 - Writing queries
@@ -237,7 +244,7 @@ How to use it Visual Perception
 - Solving Interview Questions
 
 
-# 10 | BigData and PySpark
+# 11 | Data Engineering
 
 ### BigData
 - What is BigData?
@@ -262,7 +269,7 @@ How to use it Visual Perception
 
 - Packaging Spark Applications
 
-# 11 | Development Operations with Azure
+# 12 | Data System Design
 
 - Foundation of Data Systems
 - Data Models
@@ -284,11 +291,23 @@ How to use it Visual Perception
 - Non-relational Database in Azure
 
 
-# 12 | Five Major Projects and Git
+# 13 | Five Major Projects and Git
 
 Git - Version Control System
 
 We follow project-based learning and we will work on all the projects in parallel.
+
+# 14 | Git & GitHub
+
+
+
+# 15 | Interview Preperation
+
+
+
+
+# 16 | Personal Profile & Portfolio
+
 
 
 
