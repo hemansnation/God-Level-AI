@@ -1,5 +1,6 @@
 # Data Science ML Full Stack
 
+![Robot](https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/a-robot-with-lights-on-jx5pkvw0.jpeg)
 
 ### What we will do and gain?
 
