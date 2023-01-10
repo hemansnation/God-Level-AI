@@ -1,3 +1,19 @@
+# Projects with Resources
+
+These topics are divided with resources in this format:
+
+- Project Name
+- Code & Github Links
+- Blogs List
+- Research Papers
+- paperwithcode Links
+- Go to Person
+- Companies working on the same Project
+
+
+### Endless projects in Machine Learning, Data Science, Computer Vision, NLP, Data Engineering, Analytics, Business Problems
+
+
 1. Customer Segmentation
 2. Breast Cancer Detection
 3. Car And Pedestrian Tracker
