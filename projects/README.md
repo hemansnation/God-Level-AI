@@ -1,4 +1,4 @@
-Customer Segmentation
+1. Customer Segmentation
 2. Breast Cancer Detection
 3. Car And Pedestrian Tracker
 4. Car Price Prediction
