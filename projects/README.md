@@ -618,7 +618,6 @@ Autonomous Vehicle Decisions
 564. Predicting Reddit Post Popularity ViaInitial Commentary
 565. for Continuous Human Action Recognition
 566. Predicting Pace Based on Previous Training Runs 
-
 567. Probabilistic Driving Models and Lane Change Prediction
 568. Multiple Sensor Indoor Mapping Using a Mobile Robot
 569. Bone Segmentation MRI Scans
@@ -655,3 +654,20 @@ Reviews into Product Categories
 Machine
 599. Prediction of Diabetes and cancer using SVM
 600. Efficient Heart Disease Prediction System
+
+
+Join Telegram for Data Science ML AI Resources:
+https://t.me/+sREuRiFssMo4YWJl
+
+Connect with me on these platforms:
+LinkedIn: https://www.linkedin.com/in/hemansnation/
+
+Twitter: https://twitter.com/hemansnation
+
+GitHub: https://github.com/hemansnation
+
+Instagram: https://www.instagram.com/masterdexter.ai/
+
+Are you a professional?
+For One-on-One sessions for Python, Data Science, Machine Learning, and Data Engineering.
+Email your requirements Here: connect@himanshuramchandani.co
