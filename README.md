@@ -295,7 +295,18 @@ We follow project-based learning and we will work on all the projects in paralle
 
 # 14 | Git & GitHub
 
+- Understanding Git
+- Commands and How to commit your first code?
+- How to use GitHub?
+- How to make your first open-source contribution?
+- How to work with a team? - Part 1
+- How to create your stunning GitHub profile?
+- How to build your own viral repository?
+- Building a personal landing page for your Portfolio for FREE
+- How to grow followers on GitHub?
+- How to work with a team? Part 2 - issues, milestone and projects
 
+### [Git & GitHub Course](https://god-level-python.notion.site/Git-GitHub-Course-Make-Recruiters-reach-You-Build-your-stunning-profile-First-open-source-cont-1d4d70450aa94dd7ad2c062c0fec3cb8)
 
 # 15 | Interview Preperation
 
