@@ -295,6 +295,8 @@ We follow project-based learning and we will work on all the projects in paralle
 
 # 14 | Git & GitHub
 
+### [Git & GitHub Course](https://god-level-python.notion.site/Git-GitHub-Course-Make-Recruiters-reach-You-Build-your-stunning-profile-First-open-source-cont-1d4d70450aa94dd7ad2c062c0fec3cb8)
+
 - Understanding Git
 - Commands and How to commit your first code?
 - How to use GitHub?
@@ -306,7 +308,7 @@ We follow project-based learning and we will work on all the projects in paralle
 - How to grow followers on GitHub?
 - How to work with a team? Part 2 - issues, milestone and projects
 
-### [Git & GitHub Course](https://god-level-python.notion.site/Git-GitHub-Course-Make-Recruiters-reach-You-Build-your-stunning-profile-First-open-source-cont-1d4d70450aa94dd7ad2c062c0fec3cb8)
+
 
 # 15 | Interview Preperation
 
