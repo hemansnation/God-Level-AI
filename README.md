@@ -1,6 +1,7 @@
 # Data Science ML Full Stack
 
-![Robot](https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png)
+<img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" />
+
 
 ### What we will do and gain?
 
