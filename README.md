@@ -10,9 +10,9 @@
 - Showcase your skills with a portfolio of real projects.
 - Work on Live projects in parallel to understand how companies create end-to-end software solutions and apply ML models to real-life problems.
 
-### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌12‌ ‌Sections‌ ‌
+### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌16 ‌Sections‌ ‌
 ‌
-Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
+Duration:‌ ‌256‌ ‌Hours‌ of Learning ‌(8 ‌Months)‌ ‌and many more hours for practice and project building.
 ‌
 ## Month 1 - May
 
