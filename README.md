@@ -16,19 +16,26 @@ Duration:‌ ‌100‌ ‌Hours‌ ‌(6 ‌Months)‌ ‌
 ‌
 1. [Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌](#1--python-programming-and-logic-building)
 2. [Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌](#2--data-structure--algorithms)
+
 3. [Pandas‌ ‌Numpy‌ ‌Matplotlib‌](#3--pandas-numpy-matplotlib)
 4. [Statistics‌](#4--statistics)
+
 5. [Machine‌ ‌Learning‌](#5--machine-learning)
 6. [ML Operations](#6--mlops)
+
 7. [Natural‌ ‌Language‌ ‌Processing‌](#7--natural-language-processing)
 8. [Computer‌ ‌Vision‌‌](#8--computer-vision)
+
 9. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌](#9--data-visualization-with-tableau)
 10. [Structure‌ ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structure-query-language-sql)
+
 11. [Data Engineering](#11--data-engineering)
 12. [Data System Design](#12--data-system-design)
-13. [Five‌ ‌Major‌ ‌Projects‌](#13--five-major-projects-and-git)
-14. [Git & GitHub](#14--git--github)
-15. [Interview Preparations](#15--interview-preperation)
+
+13. [Five‌ ‌Major‌ Capstone ‌Projects‌](#13--five-major-projects-and-git)
+14. [Interview Preparations](#14--interview-preperation)
+
+15. [Git & GitHub](#15--git--github)
 16. [Personal Branding and portfolio](#16--personal-profile--portfolio)
 
 ### [Resources](#resources)
@@ -289,11 +296,14 @@ How to use it Visual Perception
 
 # 13 | Five Major Projects and Git
 
-Git - Version Control System
-
 We follow project-based learning and we will work on all the projects in parallel.
 
-# 14 | Git & GitHub
+
+# 14 | Interview Preperation
+
+
+
+# 15 | Git & GitHub
 
 ### [Git & GitHub Course](https://god-level-python.notion.site/Git-GitHub-Course-Make-Recruiters-reach-You-Build-your-stunning-profile-First-open-source-cont-1d4d70450aa94dd7ad2c062c0fec3cb8)
 
@@ -307,12 +317,6 @@ We follow project-based learning and we will work on all the projects in paralle
 - Building a personal landing page for your Portfolio for FREE
 - How to grow followers on GitHub?
 - How to work with a team? Part 2 - issues, milestone and projects
-
-
-
-# 15 | Interview Preperation
-
-
 
 
 # 16 | Personal Profile & Portfolio
