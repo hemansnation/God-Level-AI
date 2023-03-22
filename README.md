@@ -1,4 +1,4 @@
-# Data Science ML Full Stack
+# God-Level Data Science ML Full Stack
 
 <img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" />
 
