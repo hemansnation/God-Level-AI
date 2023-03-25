@@ -3,13 +3,36 @@
 <img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" />
 
 
+### Who this roadmap for?
+
+- Who want a transition into data science domain.
+- Who are pursuing engineering
+- Who are targeting positions like: <br>
+**Machine Learning Engineer<br>
+Data Engineer<br>
+NLP Engineer<br>
+Computer Vision Engineer<br>
+Data Scientist**
+- Who are pursuing masters
+- Who are pursuing PhD
+
 ### What we will do and gain?
 
+- All the sessions will be recorded with lifetime access
+- 4 to 5 sessions in a week. (1 to 1.5 hours per session)
+- Closed Community support 24/7 (Networking)
 - Build an in-depth understanding of all the data concepts. 
 - Create your strong social media profile on LinkedIn and GitHub.
 - Build 15+ projects including 5+ Major Projects.
 - Showcase your skills with a portfolio of real projects.
 - Work on Live projects in parallel to understand how companies create end-to-end software solutions and apply ML models to real-life problems.
+- Placement support - resume building and mock interviews
+- Apply strategically to companies hiring Data Analysts/Business Analyst
+- Building projects and portfolios for your personal brand as a Data Analyst
+- We refer our trained people to companies hiring for data analyst positions.
+- All the resources will be shared with you topic-wise.
+- We conduct hackathons and tech events for networking and exposure as well.
+
 
 ### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌16 ‌Sections‌
 
