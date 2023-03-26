@@ -12,7 +12,9 @@
 Data Engineer<br>
 NLP Engineer<br>
 Computer Vision Engineer<br>
-Data Scientist**
+Data Scientist
+Research Scientist
+**
 - Who are pursuing masters
 - Who are pursuing PhD
 
@@ -388,6 +390,16 @@ A curated list of amazingly awesome Cybersecurity datasets.
 Robotics Dataset Collections.
  
 
+
+# Research Starting Point
+
+### Machine Learning
+1. [Introduction to Statistical Learning](https://www.ime.unicamp.br/~dias/Intoduction%20to%20Statistical%20Learning.pdf)
+2. 
+
+### Deep Learning
+
+### Reinforcement Learning
 
 
 
