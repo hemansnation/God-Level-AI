@@ -5,17 +5,17 @@
 
 ### Who this roadmap for?
 
-- Who want a transition into data science domain.
-- Who are pursuing engineering
-- Who are targeting positions like: <br>
+- Who wants to transition into the data science domain.
+- Who is pursuing engineering
+- Who is targeting positions like: <br>
 **Machine Learning Engineer<br>
 Data Engineer<br>
 NLP Engineer<br>
 Computer Vision Engineer<br>
 Data Scientist<br>
 Research Scientist**
-- Who are pursuing masters
-- Who are pursuing PhD
+- Who is pursuing masters
+- Who is pursuing PhD or completed
 
 ### What we will do and gain?
 
