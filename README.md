@@ -12,9 +12,8 @@
 Data Engineer<br>
 NLP Engineer<br>
 Computer Vision Engineer<br>
-Data Scientist
-Research Scientist
-**
+Data Scientist<br>
+Research Scientist**
 - Who are pursuing masters
 - Who are pursuing PhD
 
