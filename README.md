@@ -20,7 +20,7 @@ Research Scientist**
 ### What we will do and gain?
 
 - All the sessions will be recorded with lifetime access
-- 4 to 5 sessions in a week. (1 to 1.5 hours per session)
+- 4 to 5 sessions in a week. (2 hours per session)
 - Closed Community support 24/7 (Networking)
 - Build an in-depth understanding of all the data concepts. 
 - Create your strong social media profile on LinkedIn and GitHub.
