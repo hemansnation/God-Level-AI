@@ -28,9 +28,9 @@ Research Scientist**
 - Showcase your skills with a portfolio of real projects.
 - Work on Live projects in parallel to understand how companies create end-to-end software solutions and apply ML models to real-life problems.
 - Placement support - resume building and mock interviews
-- Apply strategically to companies hiring Data Analysts/Business Analyst
-- Building projects and portfolios for your personal brand as a Data Analyst
-- We refer our trained people to companies hiring for data analyst positions.
+- Apply strategically to companies hiring Data Professionals
+- Building projects and portfolios for your personal brand.
+- We refer our trained people to companies hiring for different data positions.
 - All the resources will be shared with you topic-wise.
 - We conduct hackathons and tech events for networking and exposure as well.
 
