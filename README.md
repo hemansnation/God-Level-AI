@@ -401,6 +401,11 @@ Robotics Dataset Collections.
 ### Reinforcement Learning
 
 
+# Projects
+
+[Here is the list of project ideas](https://github.com/hemansnation/God-Level-Data-Science-ML-Full-Stack/tree/master/projects)
+
+
 # Want to join the Community Group for Live Batch?
 https://chat.whatsapp.com/BSUPbYhzzM1BcJplcTTIxb
 
