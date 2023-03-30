@@ -62,7 +62,7 @@ Duration:‌ ‌256‌ ‌Hours‌ of Learning ‌(8 ‌Months)‌ ‌and many m
 ## Month 5 - September
 
 9. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌](#9--data-visualization-with-tableau)
-10. [Structure‌ ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structure-query-language-sql)
+10. [Structure‌d ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structure-query-language-sql)
 
 ## Month 6 - October
 
@@ -275,7 +275,7 @@ How to use it Visual Perception
 - Conditional Calculation, Parameterized Calculation
 
 
-# 10 | Structure Query Language (SQL)
+# 10 | Structured Query Language (SQL)
 
 1. Introduction to SQL: Learn the basics of SQL syntax, commands, and data types.
 2. Retrieving Data: Learn how to write queries to retrieve data from a database using SELECT statements, filtering, sorting, and grouping.
