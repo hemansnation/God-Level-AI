@@ -401,8 +401,8 @@ Robotics Dataset Collections.
 ### Reinforcement Learning
 
 
-# Want to join the Live Batch?
-## 
+# Want to join the Community Group for Live Batch?
+https://chat.whatsapp.com/BSUPbYhzzM1BcJplcTTIxb
 
 
 # Socials
