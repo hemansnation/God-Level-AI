@@ -401,6 +401,11 @@ Robotics Dataset Collections.
 ### Reinforcement Learning
 
 
+# Want to join the Live Batch?
+## 
+
+
+# Socials
 
 
 ### Join Telegram for Data Science ML AI Resources:
@@ -409,16 +414,27 @@ https://t.me/+sREuRiFssMo4YWJl
 ### Connect with me on these platforms:
 LinkedIn: https://www.linkedin.com/in/hemansnation/
 
+YouTube: https://www.youtube.com/@Himanshu-Ramchandani
+
 Twitter: https://twitter.com/hemansnation
 
 GitHub: https://github.com/hemansnation
 
 Instagram: https://www.instagram.com/masterdexter.ai/
 
+### AI Jobs LinkedIn Group: 
+https://www.linkedin.com/groups/12540639/
 
-### Are you a professional?
-For One-on-One sessions for Python, Data Science, Machine Learning, and Data Engineering.
-<br>Email your requirements Here: connect@himanshuramchandani.co
+### Medium Blog:
+https://medium.com/@hemansnation
+
+### Notes on Data, Product, and AI - Newsletter: 
+https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7014799989251956736
+
+
+### Any Query?
+
+Email Me Here: connect@himanshuramchandani.co
 
 
 
