@@ -219,6 +219,18 @@ The best way to master machine learning algorithms is to work with the Scikit-Le
 
 # 6 | MLOps
 
+You can master any one of the cloud services provider from AWS, GCP and Azure. You can switch easily once you understand one of them.
+
+We will focus on AWS - Amazon Web Services first
+
+- Deploy ML models using Flask
+- Amazon Lex - Natural Language Understanding
+- AWS Polly - Voice Analysis
+- Amazon Transcribe - Speech to Text
+- Amazon Textract - Extract Text
+- Amazon Rekognition - Image Applications
+- Amazon SageMaker - Building and deploying models
+- Working with Deep Learning on AWS
 
 
 # 7 | Natural Language Processing
