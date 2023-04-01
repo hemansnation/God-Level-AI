@@ -289,16 +289,16 @@ How to use it Visual Perception
 
 # 10 | Structured Query Language (SQL)
 
-1. Introduction to SQL: Learn the basics of SQL syntax, commands, and data types.
-2. Retrieving Data: Learn how to write queries to retrieve data from a database using SELECT statements, filtering, sorting, and grouping.
-3. Joins: Learn how to combine data from multiple tables using INNER JOIN, OUTER JOIN, and other types of joins.
-4. Aggregating Data: Learn how to use aggregate functions like SUM, COUNT, AVG, and MAX to summarize data.
-5. Subqueries: Learn how to use subqueries to retrieve data from one or more tables based on conditions.
-6. Creating Tables: Learn how to create tables, define columns, and set constraints.
-7. Modifying Data: Learn how to insert, update, and delete data in a table.
-8. Advanced SQL: Learn advanced SQL concepts such as transactions, views, stored procedures, and functions.
-9. Database Design: Learn about database design principles, normalization, and ER diagrams.
-10. Practice, Practice, Practice: Practice writing SQL queries on real-world datasets, and work on projects to apply your knowledge.
+- Fundamental to SQL syntax and Installation
+- Creating Tables, Modifiers
+- Inserting and Retrieving Data, SELECT INSERT UPDATE DELETE
+- Aggregating Data using Functions, Filtering and RegEX
+- Subqueries, retrieve data based on conditions, grouping of Data.
+- Practice Questions
+- JOINs
+- Advanced SQL concepts such as transactions, views, stored procedures, and functions.
+- Database Design principles, normalization, and ER diagrams.
+- Practice, Practice, Practice: Practice writing SQL queries on real-world datasets, and work on projects to apply your knowledge.
 
 
 # 11 | Data Engineering
