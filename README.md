@@ -295,24 +295,29 @@ How to use it Visual Perception
 
 # 12 | Data System Design
 
-- Foundation of Data Systems
-- Data Models
-- Storage
-- Encoding
-- Distributed Data
-- Replication
-- Partitioning
-- Derived Data
-- Batch Processing
-- Stream Processing
-- Microsoft Azure
-- Azure Data Workloads
-- Azure Data Factory
-- Azure HDInsights
-- Azure Databricks
-- Azure Synapse Analytics
-- Relational Database in Azure
-- Non-relational Database in Azure
+### What is system design?
+
+- IP and OSI Model
+- Domain Name System (DNS)
+- Load Balancing
+- Clustering
+- Caching
+- Availability, Scalability, Storage
+
+### Databases and DBMS
+
+- SQL databases
+- NoSQL databases
+- SQL vs NoSQL databases
+- Database Replication
+- Indexes
+- Normalization and Denormalization
+- CAP theorem
+
+### System Design Interview
+
+- URL Shortener
+- Whatsapp, Twitter, Netflix, Uber
 
 
 # 13 | Five Major Projects and Git
