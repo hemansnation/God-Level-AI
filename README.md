@@ -1,48 +1,30 @@
 # God-Level Data Science ML Full Stack
 
+A collection of scientific methods, processes, algorithms, and systems to build stories & models. This roadmap contains 16 Chapters, whether you are a fresher in the field or an experienced professional who wants to transition into Data Science & AI
+
+
+
 <img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" />
 
 ### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌16 ‌Sections‌
 
 Duration:‌ ‌256‌ ‌Hours‌ of Learning ‌(8 ‌Months)‌ ‌and many more hours for practice and project building.
-‌
-## Month 1 - May
+
 
 1. [Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌](#1--python-programming-and-logic-building)
 2. [Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌](#2--data-structure--algorithms)
-
-## Month 2 - June
-
 3. [Pandas‌ ‌Numpy‌ ‌Matplotlib‌](#3--pandas-numpy-matplotlib)
 4. [Statistics‌](#4--statistics)
-
-## Month 3 - July
-
 5. [Machine‌ ‌Learning‌](#5--machine-learning)
 6. [ML Operations](#6--mlops)
-
-## Month 4 - August
-
 7. [Natural‌ ‌Language‌ ‌Processing‌](#7--natural-language-processing)
 8. [Computer‌ ‌Vision‌‌](#8--computer-vision)
-
-## Month 5 - September
-
 9. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌](#9--data-visualization-with-tableau)
-10. [Structure‌d ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structure-query-language-sql)
-
-## Month 6 - October
-
+10. [Structure‌d ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structured-query-language-sql)
 11. [Data Engineering](#11--data-engineering)
 12. [Data System Design](#12--data-system-design)
-
-## Month 7 - November
-
 13. [Five‌ ‌Major‌ Capstone ‌Projects‌](#13--five-major-projects-and-git)
 14. [Interview Preparations](#14--interview-preperation)
-
-## Month 8 - December
-
 15. [Git & GitHub](#15--git--github)
 16. [Personal Branding and portfolio](#16--personal-profile--portfolio)
 
