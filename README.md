@@ -2,11 +2,6 @@
 
 <img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" />
 
-## 2023 Cohort
-
-- **Start**: 15th May, Monday, 7 AM IST
-- **[Register Here](https://www.notion.so/god-level-python/Data-Science-ML-Full-Stack-Roadmap-05e6c16389c845d1a438ed4cff2b9952?pvs=4#61754d50a2784b6fa8b0485087f94c68)**
-
 ### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌16 ‌Sections‌
 
 Duration:‌ ‌256‌ ‌Hours‌ of Learning ‌(8 ‌Months)‌ ‌and many more hours for practice and project building.
