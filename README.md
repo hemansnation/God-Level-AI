@@ -374,7 +374,7 @@ Robotics Dataset Collections.
 
 # Data Science ML Full Stack -> [Notion Template](https://god-level-python.notion.site/Data-Science-ML-Full-Stack-Roadmap-05e6c16389c845d1a438ed4cff2b9952)
 
-### Want to join the Community Group for Live Batch?
+### Join the WhatsApp Community Group
 https://chat.whatsapp.com/BSUPbYhzzM1BcJplcTTIxb
 
 
