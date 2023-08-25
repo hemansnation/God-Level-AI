@@ -20,7 +20,7 @@ Duration:‌ ‌(11 ‌Months)‌ ‌and many more hours for practice and projec
 
 It contains 7 Modules
 
-1. [Mathematics of Machine Learning‌](#3--pandas-numpy-matplotlib)
+1. [Mathematics of Machine Learning‌](#3)
 2. [Machine‌ ‌Learning‌ Concepts](#4--statistics)
 3. [Data Processing X Machine Learning](#5--machine-learning)
 4. [Models]()
@@ -28,7 +28,6 @@ It contains 7 Modules
    - [Natural‌ ‌Language‌ ‌Processing‌](#7--natural-language-processing)
    - [Computer‌ ‌Vision‌‌](#8--computer-vision)
    - [GenerativeAI](#6--mlops)
-
 5. [ML Operations](#6--mlops)
 6. [ML System Design](#6--mlops)
 7. [ML Interview and Projects](#6--mlops)
