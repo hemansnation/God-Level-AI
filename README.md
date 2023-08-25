@@ -8,25 +8,41 @@ A collection of scientific methods, processes, algorithms, and systems to build 
 
 ### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌16 ‌Sections‌
 
-Duration:‌ ‌256‌ ‌Hours‌ of Learning ‌(8 ‌Months)‌ ‌and many more hours for practice and project building.
+Duration:‌ ‌(11 ‌Months)‌ ‌and many more hours for practice and project building.
 
+### Phase 1
 
 1. [Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌](#1--python-programming-and-logic-building)
 2. [Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌](#2--data-structure--algorithms)
-3. [Pandas‌ ‌Numpy‌ ‌Matplotlib‌](#3--pandas-numpy-matplotlib)
-4. [Statistics‌](#4--statistics)
-5. [Machine‌ ‌Learning‌](#5--machine-learning)
-6. [ML Operations](#6--mlops)
-7. [Natural‌ ‌Language‌ ‌Processing‌](#7--natural-language-processing)
-8. [Computer‌ ‌Vision‌‌](#8--computer-vision)
-9. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌](#9--data-visualization-with-tableau)
-10. [Structure‌d ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structured-query-language-sql)
-11. [Data Engineering](#11--data-engineering)
-12. [Data System Design](#12--data-system-design)
-13. [Five‌ ‌Major‌ Capstone ‌Projects‌](#13--five-major-projects-and-git)
-14. [Interview Preparations](#14--interview-preperation)
-15. [Git & GitHub](#15--git--github)
-16. [Personal Branding and portfolio](#16--personal-profile--portfolio)
+3. [Git & GitHub](#15--git--github)
+
+### Phase 2
+
+It contains 7 Modules
+
+1. [Mathematics of Machine Learning‌](#3--pandas-numpy-matplotlib)
+2. [Machine‌ ‌Learning‌ Concepts](#4--statistics)
+3. [Data Processing X Machine Learning](#5--machine-learning)
+4. [Models]()
+
+   - [Natural‌ ‌Language‌ ‌Processing‌](#7--natural-language-processing)
+   - [Computer‌ ‌Vision‌‌](#8--computer-vision)
+   - [GenerativeAI](#6--mlops)
+
+5. [ML Operations](#6--mlops)
+6. [ML System Design](#6--mlops)
+7. [ML Interview and Projects](#6--mlops)
+
+### Phase 3
+
+13. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌](#9--data-visualization-with-tableau)
+14. [Structure‌d ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structured-query-language-sql)
+15. [Data Engineering](#11--data-engineering)
+16. [Data System Design](#12--data-system-design)
+17. [Five‌ ‌Major‌ Capstone ‌Projects‌](#13--five-major-projects-and-git)
+18. [Interview Preparations](#14--interview-preperation)
+
+20. [Personal Branding and portfolio](#16--personal-profile--portfolio)
 
 
 ### [Resources](#resources)
@@ -72,23 +88,50 @@ I will prefer Python Programming Language. Python is the best for starting your 
 <a href="https://github.com/hemansnation/Python-Roadmap-2022">In-Depth Roadmap of Python</a>
 
 # 2 | Data Structure & Algorithms
-Data Structure is the most important thing to learn not only for data scientists but for all the people working in computer science. With data structure, you get an internal understanding of the working of everything in software.
 
-Understand these topics
+#### Data Structures
 
-- Types of Algorithm Analysis
-- Asymptotic Notation, Big-O, Omega, Theta
-- Stacks
-- Queues
-- Linked List
-- Trees
-- Graphs
-- Sorting
-- Searching
-- Hashing
+   - Stack
+   - Queue
+   - Linked List
+   - Tree
+   - Graph
+
+#### Algorithms
+   
+   - List
+   - Searching
+   - Swapping and Sorting
+   - Recursion
+   - Hashing
+   - Strings
+
+Dynamic Programming Fundamentals
 
 
-# 3 | Pandas Numpy Matplotlib
+
+# 3 | Git and GitHub
+
+#### Part 1 - [YouTube Tutorial Part 1](https://www.youtube.com/watch?v=Q_ps0aqNvHc)
+   - Understanding Git
+   - Commands and How to commit your first code?
+   - How to use GitHub?
+   - How to work with a team?
+   - How to make your first open-source contribution?
+
+
+#### Part 2 - [YouTube Tutorial Part 2](https://www.youtube.com/watch?v=IusjTe7dVXQ)
+   - How to create your stunning GitHub profile?
+   - How to build your own viral repository?
+   - Building a personal landing page for your Portfolio for FREE
+   - How to grow followers on GitHub?
+   - How to work with a team? - issues, milestones, and projects
+
+[Git Notes and Resources on Notion](https://god-level-python.notion.site/Git-GitHub-Course-Make-Recruiters-reach-You-Build-your-stunning-profile-First-open-source-cont-439867a44e724488a590436a164f8dff?pvs=4)
+
+
+
+
 Python supports n-dimensional arrays with Numpy. For data in 2-dimensions, Pandas is the best library for analysis. You can use other tools but tools have drag-and-drop features and have limitations. Pandas can be customized as per the need as we can code depending upon the real-life problem.
 
 ### Numpy
@@ -310,21 +353,6 @@ We follow project-based learning and we will work on all the projects in paralle
 # 14 | Interview Preperation
 
 
-
-# 15 | Git & GitHub
-
-### [Git & GitHub Course](https://god-level-python.notion.site/Git-GitHub-Course-Make-Recruiters-reach-You-Build-your-stunning-profile-First-open-source-cont-1d4d70450aa94dd7ad2c062c0fec3cb8)
-
-- Understanding Git
-- Commands and How to commit your first code?
-- How to use GitHub?
-- How to make your first open-source contribution?
-- How to work with a team? - Part 1
-- How to create your stunning GitHub profile?
-- How to build your own viral repository?
-- Building a personal landing page for your Portfolio for FREE
-- How to grow followers on GitHub?
-- How to work with a team? Part 2 - issues, milestone and projects
 
 
 # 16 | Personal Profile & Portfolio
