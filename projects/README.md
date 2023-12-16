@@ -1,58 +1,90 @@
 # Projects with Resources
 
-These topics are divided with resources in this format:
+### Instructions for Contributors
+
+Pick the project and put the resources link for the same.
+
+Once all these resources are added to the particular project, rename the project and give it a professional name.
+
+All the projects should have these sections in them, see the 1st project for reference.
 
 - Project Name
-- Code & Github Links
-- Blogs List
-- Research Papers
-- paperwithcode Links
-- Go to Person
+- Dataset Source - it can be any source like Kaggle, Google Dataset Search, etc.
+- Github & paperwithcode Links - code available on the internet
+- Blogs - that is explaining components that are used in that project
+- Research Papers 
+- Go to Person - on LinkedIn, Twitter and YouTube
 - Companies working on the same Project
-
 
 ### Endless projects in Machine Learning, Data Science, Computer Vision, NLP, Data Engineering, Analytics, Business Problems
 
 
-1. Customer Segmentation
-2. Breast Cancer Detection
-3. Car And Pedestrian Tracker
-4. Car Price Prediction
-5. Cifar-10
-6. Income Classification using ML
-7. Startups Success Rate Prediction
-8. Bigmart Sales Prediction Analysis
-9. Wine Quality Prediction Analysis
-10. Turkiye Student Evaluation Analysis
-11. Traffic Forecast
-12. Million Songs Dataset
-13. Loan Prediction Analysis
-14. Iris dataset analysis
-15. Image to Text Conversion & Extraction
-16. Face Detection (OpenCV)
-17. IMDb sentiment review Analysis using ML
-18. Boston Housing Prediction Analysis
-19. Black Friday Sales Prediction Analysis
-20. Bike Sharing Demand Analysis
-21. Data Scientist's Salary Prediction
-22. Diabetes Classification
-23. Heart Disease Prediction
-24. First Innings Score Prediction
-25. Mall Customer Segmentation
-26. Predicting Admission into UCLA
-27. Predicting House Prices in Bengaluru
-28. Advandced Hyperparameter Tunning
-29. House Price Prediction Detailed Analysis
-30. Heart Disease Prediction
-31. Sentiment Analysis
-32. Clustering - Mall Customer Segmentation
-33. Clustering - KMeans Clustering for Imaginary Analysis
-34. China GDP Estimation
-35. Clustering -Turkiye Student Evaluation Analysis
-36. SMS Spam Detection Analysis
-37. Text Summarization using Word Frequency
-38. California Housing
-39. Ad Demand Forecast
+## 1. Customer Segmentation
+
+- Dataset Source
+    - [Customer Segmentation Dataset - Kaggle](https://www.kaggle.com/datasets/yasserh/customer-segmentation-dataset)
+- Github & paperwithcode
+    - [Customer-Segmentation-using-Machine-Learning](https://github.com/SagarPatel98/Customer-Segmentation-using-Machine-Learning)
+    - [Intelligent Vector-based Customer Segmentation in the Banking Industry](https://paperswithcode.com/paper/intelligent-vector-based-customer)
+- Blogs
+    - [Customer Segmentation](https://towardsdatascience.com/tagged/customer-segmentation)
+    - [Step by Step Customer Segmentation using K-Means in Python](https://medium.com/@ugursavci/step-by-step-customer-segmentation-using-k-means-and-pca-in-python-5733822295b6)
+- Research Papers
+    - [Customer Profiling, Segmentation, and Sales Prediction using AI in Direct Marketing](https://arxiv.org/pdf/2302.01786.pdf)
+- Go to Person
+    - []
+- Companies working on the same Project
+    - [H&M]()
+    - [Argo]()
+    - [KLM]()
+    - [Comcast]()
+
+## 2. Breast Cancer Detection
+
+- Dataset Source
+- Github & paperwithcode
+- Blogs
+- Research Papers
+- Go to Person
+- Companies working on the same Project
+
+4. Car And Pedestrian Tracker
+5. Car Price Prediction
+6. Cifar-10
+7. Income Classification using ML
+8. Startups Success Rate Prediction
+9. Bigmart Sales Prediction Analysis
+10. Wine Quality Prediction Analysis
+11. Turkiye Student Evaluation Analysis
+12. Traffic Forecast
+13. Million Songs Dataset
+14. Loan Prediction Analysis
+15. Iris dataset analysis
+16. Image to Text Conversion & Extraction
+17. Face Detection (OpenCV)
+18. IMDb sentiment review Analysis using ML
+19. Boston Housing Prediction Analysis
+20. Black Friday Sales Prediction Analysis
+21. Bike Sharing Demand Analysis
+22. Data Scientist's Salary Prediction
+23. Diabetes Classification
+24. Heart Disease Prediction
+25. First Innings Score Prediction
+26. Mall Customer Segmentation
+27. Predicting Admission into UCLA
+28. Predicting House Prices in Bengaluru
+29. Advandced Hyperparameter Tunning
+30. House Price Prediction Detailed Analysis
+31. Heart Disease Prediction
+32. Sentiment Analysis
+33. Clustering - Mall Customer Segmentation
+34. Clustering - KMeans Clustering for Imaginary Analysis
+35. China GDP Estimation
+36. Clustering -Turkiye Student Evaluation Analysis
+37. SMS Spam Detection Analysis
+38. Text Summarization using Word Frequency
+39. California Housing
+40. Ad Demand Forecast
 40.Article Recording System.
 41. Autoencoder for customer churn
 42. Bayesian Logistic Regression Bank marketing
