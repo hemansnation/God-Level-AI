@@ -7,6 +7,8 @@
 - Go to Person
 - Companies working on the same Project
 
+[Contributing Instructions](https://github.com/hemansnation/God-Level-Data-Science-ML-Full-Stack/blob/master/projects/CONTRIBUTING.md)
+
 ### Endless projects in Machine Learning, Data Science, Computer Vision, NLP, Data Engineering, Analytics, Business Problems
 
 
