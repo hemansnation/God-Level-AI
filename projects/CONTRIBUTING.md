@@ -14,4 +14,6 @@ All the projects should have these sections in them, see the 1st project for ref
 - Go to Person - on LinkedIn, Twitter and YouTube
 - Companies working on the same Project
 
+Once you added those resources, create a pull request.
+
 [Check the example Here](https://github.com/hemansnation/God-Level-Data-Science-ML-Full-Stack/blob/master/projects/README.md)
