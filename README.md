@@ -1,11 +1,9 @@
-# God Level AI
-A collection of scientific methods, processes, algorithms, and systems to build stories & models. An in-depth learning resource for humans.
-
-
+# god level AI
+A collection of scientific methods, processes, algorithms, and systems to build stories & models. An in-depth learning resource for humans. Build Your Strong Machine Learning Gen AI MLOps Portfolio/Personal Brand🚀
 
 <img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" height='300px' width='300px' />
 
-### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌16 ‌Sections‌
+### The‌ ‌Roadmap‌
 
 Duration:‌ ‌(11 ‌Months)‌ ‌and many more hours for practice and project building.
 
