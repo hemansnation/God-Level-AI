@@ -1,10 +1,9 @@
-# God-Level Data Science ML Full Stack
-
-A collection of scientific methods, processes, algorithms, and systems to build stories & models. This roadmap contains 16 Chapters, whether you are a fresher in the field or an experienced professional who wants to transition into Data Science & AI
-
+# God Level AI
+A collection of scientific methods, processes, algorithms, and systems to build stories & models. An in-depth learning resource for humans.
 
 
-<img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" />
+
+<img src="https://github.com/hemansnation/Data-Science-ML-Full-Stack/blob/master/images/components.png" height='300px' width='300px' />
 
 ### The‌ ‌Roadmap‌ ‌is‌ ‌divided‌ ‌into‌ ‌16 ‌Sections‌
 
