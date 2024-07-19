@@ -1,42 +1,23 @@
 # god level AI
-A collection of scientific methods, processes, algorithms, and systems to build stories & models. An in-depth learning resource for humans. Build Your Strong Machine Learning Gen AI MLOps Portfolio/Personal Brand🚀
+A drill of scientific methods, processes, algorithms, and systems to build stories & models. An in-depth learning resource for humans.
 
-### The‌ ‌Roadmap‌
+This is a drill for people who aim to be in the top 1% of Data and AI experts.
 
-Duration:‌ ‌(11 ‌Months)‌ ‌and many more hours for practice and project building.
+You can do the drill by watching video sessions or text content.
 
-### Phase 1
+I will recommend video sessions and use text content as go-to notes.
 
-1. [Python‌ ‌Programming‌ ‌and‌ ‌Logic‌ ‌Building‌](#1--python-programming-and-logic-building)
-2. [Data‌ ‌Structure‌ ‌&‌ ‌Algorithms‌](#2--data-structure--algorithms)
-3. [Git & GitHub](#15--git--github)
+You can be in one of the following categories
+1. either you are working on a leadership position
+2. or you are working as a professional
+3. or you are a student
 
-### Phase 2
+Whether you are working in any of the positions currently, you need to put the same amount of effort to be in the top 1%.
 
-It contains 7 Modules
+Spoiler alert - there are NO shortcuts in the tech field.
 
-1. [Mathematics of Machine Learning‌](#3)
-2. [Machine‌ ‌Learning‌ Concepts](#4--statistics)
-3. [Data Processing X Machine Learning](#5--machine-learning)
-4. [Models]()
 
-   - [Natural‌ ‌Language‌ ‌Processing‌](#7--natural-language-processing)
-   - [Computer‌ ‌Vision‌‌](#8--computer-vision)
-   - [GenerativeAI](#6--mlops)
-5. [ML Operations](#6--mlops)
-6. [ML System Design](#6--mlops)
-7. [ML Interview and Projects](#6--mlops)
 
-### Phase 3
-
-13. [Data‌ ‌Visualization‌ ‌with‌ ‌Tableau‌](#9--data-visualization-with-tableau)
-14. [Structure‌d ‌Query‌ ‌Language‌ ‌(SQL)‌](#10--structured-query-language-sql)
-15. [Data Engineering](#11--data-engineering)
-16. [Data System Design](#12--data-system-design)
-17. [Five‌ ‌Major‌ Capstone ‌Projects‌](#13--five-major-projects-and-git)
-18. [Interview Preparations](#14--interview-preperation)
-
-20. [Personal Branding and portfolio](#16--personal-profile--portfolio)
 
 
 # Resources
