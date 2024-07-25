@@ -25,7 +25,7 @@ The drill is all action-oriented.
 ## Table of Contents
 
 1. [Python]()
-2. [Data Structures & Algorithms]
+2. [Data Structures & Algorithms]()
 3. [Git & GitHub]()
 
 #### Machine Learning
