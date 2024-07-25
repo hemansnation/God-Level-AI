@@ -24,6 +24,35 @@ The drill is all action-oriented.
 
 ## Table of Contents
 
+1. [Python]()
+2. [Data Structures & Algorithms]
+3. [Git & GitHub]()
+
+#### Machine Learning
+4. [Data X NumPy, Pandas, Matplotlib, Seaborn]()
+5. [Mathematics for Machine Learning]()
+6. [Machine‌ ‌Learning‌ Algorithms X Data Processing]()
+
+#### Deep Learning
+7. [Natural Language Processing X Deep Learning]()
+8. [Generative AI - GANs, VAEs, LLMs]()
+9. [Computer Vision X Deep Learning]()
+
+#### MLOps & Architecture Design
+10. [MLOps | Machine Learning Operations]()
+11. [Machine Learning System Design]()
+
+#### Projects & Interview
+12. [Major Capstone Projects]()
+13. [AI Interview]()
+
+#### Personal Branding
+14. [Personal Branding & Portfolio]()
+15. []()
+
+
+
+
 
 
 
