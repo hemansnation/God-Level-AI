@@ -1,4 +1,7 @@
-# god level AI
+[![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/hemansnation/God-Level-AI)
+
+<h1 align= "center" > God Level AI</h1>
+
 A drill of scientific methods, processes, algorithms, and systems to build stories & models. An in-depth learning resource for humans.
 
 This is a drill for people who aim to be in the top 1% of Data and AI experts.
@@ -24,9 +27,9 @@ The drill is all action-oriented.
 
 ## Table of Contents
 
-1. [Python]()
-2. [Data Structures & Algorithms]()
-3. [Git & GitHub]()
+1. [Python](./01_Python/)
+2. [Data Structures & Algorithms](/02_Data%20Structures%20and%20Algorithms/)
+3. [Pandas, NumPy and Matplotlib](/03_Pandas%20NumPy%20Matplotlib/)
 
 #### Machine Learning
 4. [Data X NumPy, Pandas, Matplotlib, Seaborn]()
