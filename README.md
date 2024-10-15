@@ -1,7 +1,7 @@
 [![Open Source Love](https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg)](https://github.com/hemansnation/God-Level-AI)
 
 <h1 align= "center" > God Level AI</h1>
-<p><b>
+<p>
 A drill of scientific methods, processes, algorithms, and systems to build stories & models. An in-depth learning resource for humans.
 
 This is a drill for people who aim to be in the top 1% of Data and AI experts.
@@ -24,8 +24,35 @@ This is for all humans who want to get better in the field and are courageous en
 You will find all the topics explained here along with whatever is needed to understand it completely.
 
 The drill is all action-oriented.
-</b></p>
+
+To be the authority/best in the AI field, I created a routine that includes:
+- 4 hours of deep work sessions every day
+    - Deep work session rules:
+        - no phone/notifications
+        - no talking to anyone
+        - coffee/chai allowed
+- 2 hours of shallow work sessions every day
+    - Shallow work session rules:
+        - phone allowed
+        - talking allowed
+        - include sharing your work online
+
+You can customize the learning sessions according to your time availability.
+
+</p>
+
 ## Table of Contents
+
+0. Starting Point
+1. Machine‌ ‌Learning‌
+2. MLOps | AWS GCP & Azure
+3. Natural Language Processing
+4. Deep Learning
+5. Generative AI
+6. RAG, LangChain & LlamaIndex
+7. ML/GenAI System Design
+8. Machine Learning, GenAI Interview
+9. Personal Branding & Portfolio
 
 #### Fundamentals
 1. [Python](./01_Python/)
